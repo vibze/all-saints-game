@@ -1,0 +1,5 @@
+git_url "git@bitbucket.org:dareco-frontend/dar-certs.git"
+
+type "appstore", "development"
+
+app_identifier ["kz.dar.allsaints"]

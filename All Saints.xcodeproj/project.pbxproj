@@ -13,8 +13,15 @@
 		845F6376215CFF87008BF838 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6375215CFF87008BF838 /* GameScene.swift */; };
 		845F6378215CFF87008BF838 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6377215CFF87008BF838 /* GameViewController.swift */; };
 		845F637B215CFF87008BF838 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845F6379215CFF87008BF838 /* Main.storyboard */; };
-		845F637D215CFF88008BF838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845F637C215CFF88008BF838 /* Assets.xcassets */; };
 		845F6380215CFF88008BF838 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845F637E215CFF88008BF838 /* LaunchScreen.storyboard */; };
+		845F6388215D0066008BF838 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6387215D0066008BF838 /* Constants.swift */; };
+		845F638A215D008B008BF838 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6389215D008B008BF838 /* GameState.swift */; };
+		845F638C215D009E008BF838 /* GameScene+NodeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F638B215D009E008BF838 /* GameScene+NodeConfig.swift */; };
+		845F638F215D00EC008BF838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845F638E215D00EC008BF838 /* Assets.xcassets */; };
+		845F6392215D0105008BF838 /* shine.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6390215D0105008BF838 /* shine.sks */; };
+		845F6393215D0105008BF838 /* spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6391215D0105008BF838 /* spark.sks */; };
+		845F6396215D010E008BF838 /* DJVI-Back On Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */; };
+		845F6397215D010E008BF838 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6395215D010E008BF838 /* MyParticle.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +32,16 @@
 		845F6375215CFF87008BF838 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		845F6377215CFF87008BF838 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		845F637A215CFF87008BF838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		845F637C215CFF88008BF838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		845F637F215CFF88008BF838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		845F6381215CFF88008BF838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		845F6387215D0066008BF838 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		845F6389215D008B008BF838 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		845F638B215D009E008BF838 /* GameScene+NodeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+NodeConfig.swift"; sourceTree = "<group>"; };
+		845F638E215D00EC008BF838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../garyshker/space/Assets.xcassets; sourceTree = "<group>"; };
+		845F6390215D0105008BF838 /* shine.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = shine.sks; sourceTree = "<group>"; };
+		845F6391215D0105008BF838 /* spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = spark.sks; sourceTree = "<group>"; };
+		845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "DJVI-Back On Track.mp3"; sourceTree = "<group>"; };
+		845F6395215D010E008BF838 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +74,32 @@
 		845F636E215CFF87008BF838 /* All Saints */ = {
 			isa = PBXGroup;
 			children = (
+				845F638D215D00D4008BF838 /* Media */,
 				845F636F215CFF87008BF838 /* AppDelegate.swift */,
 				845F6371215CFF87008BF838 /* GameScene.sks */,
 				845F6373215CFF87008BF838 /* Actions.sks */,
 				845F6375215CFF87008BF838 /* GameScene.swift */,
 				845F6377215CFF87008BF838 /* GameViewController.swift */,
 				845F6379215CFF87008BF838 /* Main.storyboard */,
-				845F637C215CFF88008BF838 /* Assets.xcassets */,
 				845F637E215CFF88008BF838 /* LaunchScreen.storyboard */,
 				845F6381215CFF88008BF838 /* Info.plist */,
+				845F6387215D0066008BF838 /* Constants.swift */,
+				845F6389215D008B008BF838 /* GameState.swift */,
+				845F638B215D009E008BF838 /* GameScene+NodeConfig.swift */,
 			);
 			path = "All Saints";
+			sourceTree = "<group>";
+		};
+		845F638D215D00D4008BF838 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				845F638E215D00EC008BF838 /* Assets.xcassets */,
+				845F6391215D0105008BF838 /* spark.sks */,
+				845F6390215D0105008BF838 /* shine.sks */,
+				845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */,
+				845F6395215D010E008BF838 /* MyParticle.sks */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,10 +160,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845F6393215D0105008BF838 /* spark.sks in Resources */,
+				845F6396215D010E008BF838 /* DJVI-Back On Track.mp3 in Resources */,
 				845F637B215CFF87008BF838 /* Main.storyboard in Resources */,
+				845F6392215D0105008BF838 /* shine.sks in Resources */,
+				845F6397215D010E008BF838 /* MyParticle.sks in Resources */,
 				845F6372215CFF87008BF838 /* GameScene.sks in Resources */,
-				845F637D215CFF88008BF838 /* Assets.xcassets in Resources */,
 				845F6380215CFF88008BF838 /* LaunchScreen.storyboard in Resources */,
+				845F638F215D00EC008BF838 /* Assets.xcassets in Resources */,
 				845F6374215CFF87008BF838 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,9 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845F638C215D009E008BF838 /* GameScene+NodeConfig.swift in Sources */,
 				845F6376215CFF87008BF838 /* GameScene.swift in Sources */,
 				845F6378215CFF87008BF838 /* GameViewController.swift in Sources */,
+				845F638A215D008B008BF838 /* GameState.swift in Sources */,
 				845F6370215CFF87008BF838 /* AppDelegate.swift in Sources */,
+				845F6388215D0066008BF838 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,15 +330,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = R87MWZ88KR;
 				INFOPLIST_FILE = "All Saints/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kz.dar.All-Saints";
+				PRODUCT_BUNDLE_IDENTIFIER = kz.dar.allsaints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development kz.dar.allsaints";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -312,15 +350,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R87MWZ88KR;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "All Saints/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kz.dar.All-Saints";
+				PRODUCT_BUNDLE_IDENTIFIER = kz.dar.allsaints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

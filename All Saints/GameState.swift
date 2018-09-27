@@ -1,9 +1,19 @@
 //
 //  GameState.swift
-//  All Saints
+//  space
 //
-//  Created by admin on 9/27/18.
-//  Copyright © 2018 DAR. All rights reserved.
+//  Created by Kamila Kusainova on 28.06.17.
+//  Copyright © 2017 sdu. All rights reserved.
 //
 
 import Foundation
+
+enum GameState {
+    case tutorial, play, pause, end
+}
+
+class Model{
+    
+    static let sharedInstance = Model()
+    var sound = true
+}

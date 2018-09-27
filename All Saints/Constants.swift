@@ -1,9 +1,15 @@
 //
 //  Constants.swift
-//  All Saints
+//  space
 //
-//  Created by admin on 9/27/18.
-//  Copyright © 2018 DAR. All rights reserved.
+//  Created by Kamila Kusainova on 28.06.17.
+//  Copyright © 2017 sdu. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+let screenHeight = UIScreen.main.bounds.height
+let screenWidth = UIScreen.main.bounds.width
+let screenBounds = UIScreen.main.bounds
+let screenSize = UIScreen.main.bounds.size
+
