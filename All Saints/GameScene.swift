@@ -19,15 +19,17 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     }
     var score = 0
     
-    let ship = Ship.construct(size: CGSize(width: 110, height: 260))
+    let ship = Ship.construct(size: CGSize(width: 100, height: 140))
     
     var background: SKSpriteNode!
     var boomEmitter:SKEmitterNode!
     var pauseButton: SKSpriteNode!
     var swipeSprite: SKSpriteNode!
     var scoreLabel  = SKLabelNode()
-    var updateTime = TimeInterval()
-    var yieldTime  = TimeInterval()
+//    var updateTime = TimeInterval()
+//    var yieldTime  = TimeInterval()
+    var counter = 60
+    var counterTimer = Timer()
     // Touch handling
     var location = CGPoint.zero
     var entryX: CGFloat = 0
@@ -51,20 +53,20 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         let gameOver = UILabel()
         gameOver.text = "GAME OVER"
         gameOver.textColor = .white
-        gameOver.font = UIFont(name: "Ubuntu", size: screenWidth / 9.375 )
+//        gameOver.font = UIFont(name: "Ubuntu", size: screenWidth / 9.375 )
         return gameOver
     }()
     
     private lazy var finishScoreLabel: UILabel = {
         let finishScore = UILabel()
-        finishScore.font = UIFont(name: "Ubuntu", size: screenWidth / 12.5)
+//        finishScore.font = UIFont(name: "Ubuntu", size: screenWidth / 12.5)
         finishScore.textColor = UIColor(red: 85/255, green: 190/255, blue: 240/255, alpha: 100)
         return finishScore
     }()
     
     private lazy var highScoreLabel: UILabel = {
         let highScore = UILabel()
-        highScore.font = UIFont(name: "Ubuntu", size: screenWidth / 12.5)
+//        highScore.font = UIFont(name: "Ubuntu", size: screenWidth / 12.5)
         highScore.textAlignment = .center
         highScore.textColor = UIColor(red: 85/255, green: 190/255, blue: 240/255, alpha: 100)
         return highScore
@@ -86,7 +88,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     private lazy var restartLabel: UILabel = {
         let labelRestart = UILabel()
         labelRestart.text = "RESTART"
-        labelRestart.font = UIFont(name: "Ubuntu", size: screenWidth / 26.7 )
+//        labelRestart.font = UIFont(name: "Ubuntu", size: screenWidth / 26.7 )
         labelRestart.textColor = .white
         return labelRestart
         
@@ -94,7 +96,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     private lazy var menuLabel: UILabel = {
         let labelMenu = UILabel()
         labelMenu.text = "MENU"
-        labelMenu.font = UIFont(name: "Ubuntu", size: screenWidth / 26.7 )
+//        labelMenu.font = UIFont(name: "Ubuntu", size: screenWidth / 26.7 )
         labelMenu.textColor = .white
         return labelMenu
         
@@ -116,7 +118,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         addChild(crashMusic)
         
         if Model.sharedInstance.sound == true{
-            backgroundMusic = SKAudioNode(fileNamed: "DJVI-Back On Track.mp3")
+            backgroundMusic = SKAudioNode(fileNamed: "soundtrack.mp3")
             addChild(backgroundMusic)
         }
         state = .tutorial
@@ -124,22 +126,22 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     // MARK: - Scene ovrrided methods
     override func update(_ currentTime: TimeInterval) {
-        var timeSinceLastUpdate = currentTime - updateTime
-        updateTime = currentTime
-        if state == .play{
-            i -= 0.003
-        }
-        if timeSinceLastUpdate > 2.0{
-            timeSinceLastUpdate = 1/60
-            updateTime = currentTime
-        }
-        guard state == .play else { return }
-        updateTimerInterval(timeSinceLastUpdate: timeSinceLastUpdate)
+//        var timeSinceLastUpdate = currentTime - updateTime
+//        updateTime = currentTime
+//        if state == .play{
+//            i -= 0.003
+//        }
+//        if timeSinceLastUpdate > 2.0{
+//            timeSinceLastUpdate = 1/60
+//            updateTime = currentTime
+//        }
+//        guard state == .play else { return }
+//        updateTimerInterval(timeSinceLastUpdate: timeSinceLastUpdate)
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
         ship.ignite()
-        if contact.bodyA.node?.name == "player"{state = .end}
+        if contact.bodyA.node?.name == "player" { state = .end }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -199,7 +201,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         pauseView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         let pauseLabel = UILabel(frame: CGRect(x: screenWidth / 3, y: screenHeight / 8, width: screenWidth / 1.87 , height: screenHeight / 3.32))
         pauseLabel.text = "PAUSE"
-        pauseLabel.font = UIFont(name: "Ubuntu", size: screenWidth / 9.375 )
+//        pauseLabel.font = UIFont(name: "Ubuntu", size: screenWidth / 9.375 )
         pauseLabel.textColor = .white
         
         let playButton = UIButton(frame: CGRect(x: screenWidth / 2.25, y: screenHeight / 2.5, width: screenHeight / 16, height: screenHeight / 16))
@@ -211,7 +213,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         restartButton.addTarget(self, action: #selector(restartGame), for: .touchUpInside)
         let restartLabel = UILabel(frame: CGRect(x: screenWidth / 1.47, y: screenHeight / 1.38, width: screenHeight / 10, height: screenHeight / 10))
         restartLabel.text = "RESTART"
-        restartLabel.font = UIFont(name: "Ubuntu", size: screenWidth / 26.7 )
+//        restartLabel.font = UIFont(name: "Ubuntu", size: screenWidth / 26.7 )
         restartLabel.textColor = .white
         
         let menuButton = UIButton(frame: CGRect(x: screenWidth / 4.4, y: screenHeight / 1.5, width: screenHeight / 16, height: screenHeight / 16))
@@ -219,7 +221,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         menuButton.addTarget(self, action: #selector(backToMenu), for: .touchUpInside)
         let menuLabel = UILabel(frame: CGRect(x: screenWidth / 4.45, y: screenHeight / 1.38, width: screenHeight / 10, height: screenHeight / 10))
         menuLabel.text = "MENU"
-        menuLabel.font = UIFont(name: "Ubuntu", size: screenWidth / 26.7 )
+//        menuLabel.font = UIFont(name: "Ubuntu", size: screenWidth / 26.7 )
         menuLabel.textColor = .white
         
         pauseView.addSubview(restartButton)
@@ -266,17 +268,18 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     // MARK: - Actions
     func addRandom(){
         let randomNumber = Int(arc4random_uniform(6))
-        addRow(type: RowType(rawValue: randomNumber)!)
+//        addRow(type: RowType(rawValue: randomNumber)!)
+        addBeers()
     }
     
     func updateTimerInterval(timeSinceLastUpdate: TimeInterval){
-        yieldTime += timeSinceLastUpdate
-        if yieldTime > 1.5{
-            yieldTime = 0
-            score+=1
-            scoreLabel.text = "\(score)"
-            addRandom()
-        }
+//        yieldTime += timeSinceLastUpdate
+//        if yieldTime > 1.5{
+//            yieldTime = 0
+//            score+=1
+//            scoreLabel.text = "\(score)"
+//            addRandom()
+//        }
     }
     
     func pauseGame(){

@@ -22,7 +22,7 @@ class GameViewController: UIViewController {
         
         let skView = SKView(frame: UIScreen.main.bounds)
         skView.ignoresSiblingOrder = true
-        skView.showsPhysics = false
+        skView.showsPhysics = true //false
         skView.backgroundColor = .clear
         view.addSubview(skView)
         
