@@ -151,33 +151,45 @@ extension GameScene {
     }
     
     func createHUD(){
-        scoreLabel = SKLabelNode()
-        scoreLabel.fontSize = 20
-        scoreLabel.fontColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        scoreLabel.position = CGPoint(x: screenWidth / 2, y: screenHeight / 1.1)
-        scoreLabel.name = "scoreLabel"
-        scoreLabel.text = "0"
-        scoreLabel.zPosition = 2
-        scoreLabel.isHidden = true
-        addChild(scoreLabel)
+//        scoreLabel = SKLabelNode()
+//        scoreLabel.fontSize = 20
+//        scoreLabel.fontColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//        scoreLabel.position = CGPoint(x: screenWidth / 2, y: screenHeight / 1.1)
+//        scoreLabel.name = "scoreLabel"
+//        scoreLabel.text = "0"
+//        scoreLabel.zPosition = 2
+//        scoreLabel.isHidden = true
+//        addChild(scoreLabel)
         
-        pauseButton = SKSpriteNode(texture: SKTexture(image: #imageLiteral(resourceName: "pause")))
-        pauseButton.position = CGPoint(x: screenWidth / 1.1, y: screenHeight / 1.1 + 20)
-        pauseButton.zPosition = 2
-        pauseButton.size = CGSize(width: screenWidth / 9.37, height: screenHeight / 16.67)
-        pauseButton.name = "pauseButton"
-        pauseButton.isHidden = true
-        addChild(pauseButton)
+//        timerLabel = SKLabelNode()
+//        timerLabel.fontSize = 40
+//        timerLabel.fontColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//        timerLabel.position = CGPoint(x: screenWidth / 2, y: screenHeight / 1.1)
+//        timerLabel.name = "timerLabel"
+//        timerLabel.text = "0"
+//        timerLabel.zPosition = 2
+//        timerLabel.isHidden = true
+//        addChild(timerLabel)
+//
+//        pauseButton = SKSpriteNode(texture: SKTexture(image: #imageLiteral(resourceName: "pause")))
+//        pauseButton.position = CGPoint(x: screenWidth / 1.1, y: screenHeight / 1.1 + 20)
+//        pauseButton.zPosition = 2
+//        pauseButton.size = CGSize(width: screenWidth / 9.37, height: screenHeight / 16.67)
+//        pauseButton.name = "pauseButton"
+//        pauseButton.isHidden = true
+//        addChild(pauseButton)
     }
     
     func hideHUD() {
-        scoreLabel.isHidden = true
-        pauseButton.isHidden = true
+//        scoreLabel.isHidden = true
+//        timerLabel.isHidden = true
+//        pauseButton.isHidden = true
     }
     
     func showHUD() {
-        scoreLabel.isHidden = false
-        pauseButton.isHidden = false
+//        scoreLabel.isHidden = false
+//        timerLabel.isHidden = false
+//        pauseButton.isHidden = false
     }
     
     func addTutorial(){

@@ -17,19 +17,21 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
             stateChanged(to: state)
         }
     }
+    
     var score = 0
     
     let ship = Ship.construct(size: CGSize(width: 100, height: 140))
     
     var background: SKSpriteNode!
     var boomEmitter:SKEmitterNode!
-    var pauseButton: SKSpriteNode!
     var swipeSprite: SKSpriteNode!
-    var scoreLabel  = SKLabelNode()
+//    var scoreLabel = SKLabelNode()
+//    var timerLabel = SKLabelNode()
 //    var updateTime = TimeInterval()
 //    var yieldTime  = TimeInterval()
-    var counter = 60
+    var counter = 0
     var counterTimer = Timer()
+    var counterStartValue = 60
     // Touch handling
     var location = CGPoint.zero
     var entryX: CGFloat = 0
@@ -122,6 +124,17 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
             addChild(backgroundMusic)
         }
         state = .tutorial
+        
+        counter = counterStartValue
+        startCounter()
+    }
+    
+    private func startCounter() {
+        counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(decrementCounter), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func decrementCounter(value: Int = 1) {
+        counter -= value
     }
     
     // MARK: - Scene ovrrided methods
@@ -149,13 +162,10 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
             state = .play
             return
         }
-        
-        guard let touch = touches.first else { return }
-        let location = touch.location(in: self)
-        let node = self.atPoint(location)
-        if node.name == "pauseButton" {
-            state = .pause
-        }
+//
+//        guard let touch = touches.first else { return }
+//        let location = touch.location(in: self)
+//        let node = self.atPoint(location)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -234,7 +244,8 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     func gameOverPresent(){
         view?.addSubview(self.gameOverView)
-        scoreLabel.removeFromParent()
+//        scoreLabel.removeFromParent()
+//        timerLabel.removeFromParent()
         
         finishScoreLabel.text = "SCORE: \(score)"
         
@@ -283,10 +294,9 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     }
     
     func pauseGame(){
-        hideHUD()
+//        hideHUD()
         view?.isPaused = true
         view?.addSubview(pauseView)
-        
     }
     
     func stopGame(){
