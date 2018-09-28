@@ -82,6 +82,71 @@
             </objects>
             <point key="canvasLocation" x="702" y="26"/>
         </scene>
+        <!--Score View Controller-->
+        <scene sceneID="2m4-GP-f2k">
+            <objects>
+                <viewController id="I76-s9-dTR" customClass="ScoreViewController" customModule="All_Saints" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NxJ-Lq-Q1m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuBackground" translatesAutoresizingMaskIntoConstraints="NO" id="WKK-Qh-SKx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmo-oA-J4f" userLabel="ScoreLabel">
+                                <rect key="frame" x="129.5" y="287" width="116" height="93"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="80"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нарезался!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkm-Yl-Aoz" userLabel="TitleLabel">
+                                <rect key="frame" x="30" y="225" width="315" height="42"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="36"/>
+                                <color key="textColor" red="1" green="0.56450360496102425" blue="0.20064405648057038" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нарезался!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="end-7r-3xF" userLabel="DescLabel">
+                                <rect key="frame" x="30" y="390" width="315" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzO-cU-qMD" userLabel="StartButton" customClass="ActionButton" customModule="All_Saints" customModuleProvider="target">
+                                <rect key="frame" x="87" y="539" width="200" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="9IC-KK-kge"/>
+                                    <constraint firstAttribute="width" constant="200" id="ZJR-4f-OYS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                <state key="normal" title="Спать"/>
+                                <connections>
+                                    <action selector="didTapDoneButton:" destination="I76-s9-dTR" eventType="touchUpInside" id="Usd-ZW-5aT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HzJ-r8-AHP" firstAttribute="trailing" secondItem="Tkm-Yl-Aoz" secondAttribute="trailing" constant="30" id="2XH-Sz-ry4"/>
+                            <constraint firstItem="Wmo-oA-J4f" firstAttribute="centerY" secondItem="NxJ-Lq-Q1m" secondAttribute="centerY" id="3U9-rw-YRy"/>
+                            <constraint firstItem="WKK-Qh-SKx" firstAttribute="top" secondItem="NxJ-Lq-Q1m" secondAttribute="top" id="DtO-rF-0Jh"/>
+                            <constraint firstAttribute="bottom" secondItem="WKK-Qh-SKx" secondAttribute="bottom" id="KFc-UZ-QUS"/>
+                            <constraint firstItem="Wmo-oA-J4f" firstAttribute="top" secondItem="Tkm-Yl-Aoz" secondAttribute="bottom" constant="20" id="MpN-Y1-VdD"/>
+                            <constraint firstItem="Tkm-Yl-Aoz" firstAttribute="leading" secondItem="HzJ-r8-AHP" secondAttribute="leading" constant="30" id="WPp-sA-5qL"/>
+                            <constraint firstItem="HzJ-r8-AHP" firstAttribute="bottom" secondItem="dzO-cU-qMD" secondAttribute="bottom" constant="80" id="cuK-8D-7dm"/>
+                            <constraint firstItem="HzJ-r8-AHP" firstAttribute="trailing" secondItem="end-7r-3xF" secondAttribute="trailing" constant="30" id="daB-zr-9RV"/>
+                            <constraint firstItem="end-7r-3xF" firstAttribute="top" secondItem="Wmo-oA-J4f" secondAttribute="bottom" constant="10" id="gcx-aW-FgS"/>
+                            <constraint firstItem="Wmo-oA-J4f" firstAttribute="centerX" secondItem="NxJ-Lq-Q1m" secondAttribute="centerX" id="kop-Js-nV6"/>
+                            <constraint firstItem="end-7r-3xF" firstAttribute="leading" secondItem="HzJ-r8-AHP" secondAttribute="leading" constant="30" id="qf3-4n-SLa"/>
+                            <constraint firstItem="HzJ-r8-AHP" firstAttribute="trailing" secondItem="WKK-Qh-SKx" secondAttribute="trailing" id="qvr-6T-USi"/>
+                            <constraint firstItem="WKK-Qh-SKx" firstAttribute="leading" secondItem="HzJ-r8-AHP" secondAttribute="leading" id="unK-v1-S0f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HzJ-r8-AHP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Y2-3x-Ne6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1426" y="26"/>
+        </scene>
     </scenes>
     <resources>
         <image name="MenuBackground" width="375" height="812"/>
