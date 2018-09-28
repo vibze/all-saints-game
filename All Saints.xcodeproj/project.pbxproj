@@ -28,6 +28,7 @@
 		845F63B5215E4385008BF838 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63B4215E4385008BF838 /* ScoreViewController.swift */; };
 		845F63B7215E4BDC008BF838 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63B6215E4BDC008BF838 /* Beer.swift */; };
 		845F63B9215E50B9008BF838 /* SKSpriteNode+aspectFill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63B8215E50B9008BF838 /* SKSpriteNode+aspectFill.swift */; };
+		845F63BC215E5CEF008BF838 /* gulp-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 845F63BB215E5CEF008BF838 /* gulp-1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		845F63B4215E4385008BF838 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		845F63B6215E4BDC008BF838 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		845F63B8215E50B9008BF838 /* SKSpriteNode+aspectFill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+aspectFill.swift"; sourceTree = "<group>"; };
+		845F63BB215E5CEF008BF838 /* gulp-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "gulp-1.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		845F636E215CFF87008BF838 /* All Saints */ = {
 			isa = PBXGroup;
 			children = (
+				845F63BA215E5C66008BF838 /* Sounds */,
 				845F63A0215E275F008BF838 /* Views */,
 				845F639B215E262A008BF838 /* Controllers */,
 				845F6398215DD023008BF838 /* Nodes */,
@@ -152,6 +155,14 @@
 			path = misc;
 			sourceTree = "<group>";
 		};
+		845F63BA215E5C66008BF838 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				845F63BB215E5CEF008BF838 /* gulp-1.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,6 +226,7 @@
 				845F63AB215E3E17008BF838 /* LaunchScreen.storyboard in Resources */,
 				845F63AD215E3E17008BF838 /* GameScene.sks in Resources */,
 				845F6392215D0105008BF838 /* shine.sks in Resources */,
+				845F63BC215E5CEF008BF838 /* gulp-1.mp3 in Resources */,
 				845F63AC215E3E17008BF838 /* Main.storyboard in Resources */,
 				845F63AF215E3E17008BF838 /* Actions.sks in Resources */,
 				845F6397215D010E008BF838 /* MyParticle.sks in Resources */,

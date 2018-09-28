@@ -77,19 +77,20 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     // MARK: - Did move to skVIew
     override func didMove(to view: SKView) {
-        ship.position = CGPoint(x: view.frame.width/2, y: view.frame.width - ship.size.height)
+        ship.position = CGPoint(x: view.frame.width/2, y: view.frame.width - ship.size.height - 40)
         addChild(ship)
         
         backgroundColor = #colorLiteral(red: 0.1098039216, green: 0.1607843137, blue: 0.06274509804, alpha: 1)
         setupWorldPhysics()
         moveBackground()
         
-        crashMusic = SKAudioNode(fileNamed: "crash.mp3")
-        crashMusic.run(SKAction.pause())
-        addChild(crashMusic)
+        if let url = Bundle.main.url(forResource: "gulp-1.mp3", withExtension: "mp3") {
+            crashMusic = SKAudioNode(url: url)
+            addChild(crashMusic)
+        }
         
         if Model.sharedInstance.sound == true{
-            backgroundMusic = SKAudioNode(fileNamed: "soundtrack.mp3")
+            //backgroundMusic = SKAudioNode(fileNamed: "soundtrack.mp3")
             addChild(backgroundMusic)
         }
         state = .tutorial
@@ -165,8 +166,8 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
             if Model.sharedInstance.sound == true {
                 backgroundMusic.run(SKAction.play())
             }
+            ship.ignite()
             removeTutorial()
-            playerEmitter.isHidden = false
         case .pause:
 //            pauseGame()
             backgroundMusic.run(SKAction.pause())
