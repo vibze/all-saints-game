@@ -40,35 +40,7 @@ extension GameScene {
             addChild(background)
         }
     }
-    
-    func createPlayer(){
-        player = SKSpriteNode(texture: SKTexture(image: #imageLiteral(resourceName: "Rocket")))
-        player.position = CGPoint(x: screenWidth / 2, y: screenHeight / 3)
-        player.name = "player"
-        player.size = CGSize(width: screenWidth / 5.35, height: screenHeight / 4.3)
-        player.zPosition = 1
-        player.speed = 10
-        player.physicsBody?.isDynamic = true
-        player.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: screenWidth / 8, height: screenHeight / 7.75))
-        player.physicsBody?.categoryBitMask = bitMask.player
-        player.physicsBody?.collisionBitMask = bitMask.player
-        player.physicsBody?.contactTestBitMask = bitMask.wall
-        
-        playerEmitter = SKEmitterNode(fileNamed: "spark.sks")!
-        playerEmitter.position = CGPoint(x: screenWidth / 150, y:screenHeight / -27)
-        playerEmitter.zPosition = 1
-        playerEmitter.isHidden = true
-        player.addChild(playerEmitter)
-        
-        boomEmitter = SKEmitterNode(fileNamed: "MyParticle.sks")!
-        boomEmitter.position = CGPoint(x: screenWidth / 6, y:screenHeight / 2)
-        boomEmitter.zPosition = 2
-        boomEmitter.isHidden = true
-        //        player.addChild(boomEmitter)
-        
-        self.addChild(player)
-    }
-    
+
     func createWall() -> SKSpriteNode {
         var textures = [SKTexture]()
         textures.append(SKTexture(image: #imageLiteral(resourceName: "red")))

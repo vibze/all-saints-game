@@ -19,8 +19,9 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     }
     var score = 0
     
+    let ship = Ship.construct(size: CGSize(width: 110, height: 260))
+    
     var background: SKSpriteNode!
-    var player: SKSpriteNode!
     var boomEmitter:SKEmitterNode!
     var pauseButton: SKSpriteNode!
     var swipeSprite: SKSpriteNode!
@@ -101,10 +102,12 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     // MARK: - Did move to skVIew
     override func didMove(to view: SKView) {
+        ship.position = CGPoint(x: view.frame.width/2, y: view.frame.width - ship.size.height)
+        addChild(ship)
+        
         self.backgroundColor = UIColor(red: 53/255, green: 43/255, blue: 77/255, alpha: 100)
         setupWorldPhysics()
         moveBackground()
-        createPlayer()
         createHUD()
         configurePauseView()
         
@@ -135,7 +138,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        boomEmitter.isHidden = false
+        ship.ignite()
         if contact.bodyA.node?.name == "player"{state = .end}
     }
     
@@ -162,7 +165,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
             }
             let dX = abs(Int32(abs(Int32(location.x)) - abs(Int32(entryX))))
             if dX > 1 {
-                player.position.x = location.x
+                ship.position.x = location.x
             }
         }
     }
