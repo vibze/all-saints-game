@@ -26,8 +26,10 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     var pauseButton: SKSpriteNode!
     var swipeSprite: SKSpriteNode!
     var scoreLabel  = SKLabelNode()
-    var updateTime = TimeInterval()
-    var yieldTime  = TimeInterval()
+//    var updateTime = TimeInterval()
+//    var yieldTime  = TimeInterval()
+    var counter = 60
+    var counterTimer = Timer()
     // Touch handling
     var location = CGPoint.zero
     var entryX: CGFloat = 0
@@ -124,17 +126,17 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     // MARK: - Scene ovrrided methods
     override func update(_ currentTime: TimeInterval) {
-        var timeSinceLastUpdate = currentTime - updateTime
-        updateTime = currentTime
-        if state == .play{
-            i -= 0.003
-        }
-        if timeSinceLastUpdate > 2.0{
-            timeSinceLastUpdate = 1/60
-            updateTime = currentTime
-        }
-        guard state == .play else { return }
-        updateTimerInterval(timeSinceLastUpdate: timeSinceLastUpdate)
+//        var timeSinceLastUpdate = currentTime - updateTime
+//        updateTime = currentTime
+//        if state == .play{
+//            i -= 0.003
+//        }
+//        if timeSinceLastUpdate > 2.0{
+//            timeSinceLastUpdate = 1/60
+//            updateTime = currentTime
+//        }
+//        guard state == .play else { return }
+//        updateTimerInterval(timeSinceLastUpdate: timeSinceLastUpdate)
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -271,13 +273,13 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     }
     
     func updateTimerInterval(timeSinceLastUpdate: TimeInterval){
-        yieldTime += timeSinceLastUpdate
-        if yieldTime > 1.5{
-            yieldTime = 0
-            score+=1
-            scoreLabel.text = "\(score)"
-            addRandom()
-        }
+//        yieldTime += timeSinceLastUpdate
+//        if yieldTime > 1.5{
+//            yieldTime = 0
+//            score+=1
+//            scoreLabel.text = "\(score)"
+//            addRandom()
+//        }
     }
     
     func pauseGame(){

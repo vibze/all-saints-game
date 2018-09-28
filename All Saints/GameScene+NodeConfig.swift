@@ -80,9 +80,9 @@ extension GameScene {
     
     func addBeers() {
         let beer = Beer.construct(size: CGSize(width: 80, height: 80))
-//        var randomNumber = Int(arc4random_uniform(5))
-//        if randomNumber == 0 { randomNumber = 2 }
-        beer.position = CGPoint(x: screenWidth - 40, y: screenHeight / 0.78)
+        var randomNumber = Int(arc4random_uniform(5))
+        if randomNumber == 0 { randomNumber = 2 }
+        beer.position = CGPoint(x: (screenWidth / CGFloat(randomNumber)) - 40, y: screenHeight / 0.78)
         addChild(beer)
         addMovement(wall: beer)
     }
