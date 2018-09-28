@@ -29,6 +29,7 @@
 		845F63B7215E4BDC008BF838 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63B6215E4BDC008BF838 /* Beer.swift */; };
 		845F63B9215E50B9008BF838 /* SKSpriteNode+aspectFill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63B8215E50B9008BF838 /* SKSpriteNode+aspectFill.swift */; };
 		845F63BC215E5CEF008BF838 /* gulp-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 845F63BB215E5CEF008BF838 /* gulp-1.mp3 */; };
+		845F63BE215E5F77008BF838 /* soundtrack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 845F63BD215E5F77008BF838 /* soundtrack.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		845F63B6215E4BDC008BF838 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		845F63B8215E50B9008BF838 /* SKSpriteNode+aspectFill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+aspectFill.swift"; sourceTree = "<group>"; };
 		845F63BB215E5CEF008BF838 /* gulp-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "gulp-1.mp3"; sourceTree = "<group>"; };
+		845F63BD215E5F77008BF838 /* soundtrack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundtrack.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 		845F63BA215E5C66008BF838 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				845F63BD215E5F77008BF838 /* soundtrack.mp3 */,
 				845F63BB215E5CEF008BF838 /* gulp-1.mp3 */,
 			);
 			path = Sounds;
@@ -228,6 +231,7 @@
 				845F6392215D0105008BF838 /* shine.sks in Resources */,
 				845F63BC215E5CEF008BF838 /* gulp-1.mp3 in Resources */,
 				845F63AC215E3E17008BF838 /* Main.storyboard in Resources */,
+				845F63BE215E5F77008BF838 /* soundtrack.mp3 in Resources */,
 				845F63AF215E3E17008BF838 /* Actions.sks in Resources */,
 				845F6397215D010E008BF838 /* MyParticle.sks in Resources */,
 				845F638F215D00EC008BF838 /* Assets.xcassets in Resources */,

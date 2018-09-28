@@ -89,8 +89,8 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
             addChild(crashMusic)
         }
         
-        if Model.sharedInstance.sound == true{
-            //backgroundMusic = SKAudioNode(fileNamed: "soundtrack.mp3")
+        if let url = Bundle.main.url(forResource: "soundtrack.mp3", withExtension: "mp3") {
+            backgroundMusic = SKAudioNode(url: url)
             addChild(backgroundMusic)
         }
         state = .tutorial
