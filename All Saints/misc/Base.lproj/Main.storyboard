@@ -74,17 +74,70 @@
                     <view key="view" contentMode="scaleToFill" id="tUx-ff-hRD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyS-gQ-vbn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </skView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выпил: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjF-vu-SlR">
+                                <rect key="frame" x="16" y="20" width="200" height="32.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="PlT-PI-7h5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUP-Sb-5PU">
+                                <rect key="frame" x="335" y="20" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="AeG-S8-e3y"/>
+                                    <constraint firstAttribute="width" constant="32" id="zaT-bb-ppa"/>
+                                </constraints>
+                                <state key="normal" image="pause"/>
+                                <connections>
+                                    <action selector="pauseTapped:" destination="Rz5-zw-OuE" eventType="touchUpInside" id="3tL-nr-llF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noU-hq-7TH">
+                                <rect key="frame" x="239" y="20" width="80" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="3Yx-11-0yp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OyS-gQ-vbn" firstAttribute="leading" secondItem="dAu-7s-YVb" secondAttribute="leading" id="AQo-ig-DQq"/>
+                            <constraint firstItem="bjF-vu-SlR" firstAttribute="leading" secondItem="dAu-7s-YVb" secondAttribute="leading" constant="16" id="D1w-Wr-SeH"/>
+                            <constraint firstItem="bjF-vu-SlR" firstAttribute="top" secondItem="dAu-7s-YVb" secondAttribute="top" id="Is6-Hk-uK0"/>
+                            <constraint firstItem="OyS-gQ-vbn" firstAttribute="trailing" secondItem="dAu-7s-YVb" secondAttribute="trailing" id="Qtq-S0-hcS"/>
+                            <constraint firstItem="noU-hq-7TH" firstAttribute="trailing" secondItem="OUP-Sb-5PU" secondAttribute="leading" constant="-16" id="f88-ae-eTk"/>
+                            <constraint firstItem="OUP-Sb-5PU" firstAttribute="top" secondItem="dAu-7s-YVb" secondAttribute="top" id="gmd-vq-V5Y"/>
+                            <constraint firstItem="OyS-gQ-vbn" firstAttribute="top" secondItem="tUx-ff-hRD" secondAttribute="top" id="k8S-dz-qDs"/>
+                            <constraint firstItem="noU-hq-7TH" firstAttribute="top" secondItem="dAu-7s-YVb" secondAttribute="top" id="sMv-0A-NFs"/>
+                            <constraint firstItem="dAu-7s-YVb" firstAttribute="trailing" secondItem="OUP-Sb-5PU" secondAttribute="trailing" constant="8" id="ykR-2I-GDk"/>
+                            <constraint firstItem="OyS-gQ-vbn" firstAttribute="bottom" secondItem="dAu-7s-YVb" secondAttribute="bottom" id="zds-lQ-mgv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dAu-7s-YVb"/>
                     </view>
+                    <connections>
+                        <outlet property="pauseButton" destination="OUP-Sb-5PU" id="Hn3-bL-mMu"/>
+                        <outlet property="scoreLabel" destination="bjF-vu-SlR" id="RKY-Am-MAq"/>
+                        <outlet property="skView" destination="OyS-gQ-vbn" id="TpG-Yd-dLe"/>
+                        <outlet property="timerLabel" destination="noU-hq-7TH" id="4c4-sa-KDE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nv4-ti-HYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="702" y="26"/>
+            <point key="canvasLocation" x="701.60000000000002" y="25.637181409295355"/>
         </scene>
     </scenes>
     <resources>
-        <image name="MenuBackground" width="375" height="812"/>
+        <image name="MenuBackground" width="355" height="650"/>
         <image name="MenuLogo" width="200" height="200"/>
+        <image name="pause" width="128" height="128"/>
     </resources>
 </document>
