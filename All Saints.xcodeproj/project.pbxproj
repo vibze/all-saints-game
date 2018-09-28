@@ -11,7 +11,6 @@
 		845F6388215D0066008BF838 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6387215D0066008BF838 /* Constants.swift */; };
 		845F638A215D008B008BF838 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6389215D008B008BF838 /* GameState.swift */; };
 		845F638C215D009E008BF838 /* GameScene+NodeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F638B215D009E008BF838 /* GameScene+NodeConfig.swift */; };
-		845F638F215D00EC008BF838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845F638E215D00EC008BF838 /* Assets.xcassets */; };
 		845F6392215D0105008BF838 /* shine.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6390215D0105008BF838 /* shine.sks */; };
 		845F6393215D0105008BF838 /* spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6391215D0105008BF838 /* spark.sks */; };
 		845F6396215D010E008BF838 /* DJVI-Back On Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */; };
@@ -30,6 +29,7 @@
 		845F63B9215E50B9008BF838 /* SKSpriteNode+aspectFill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63B8215E50B9008BF838 /* SKSpriteNode+aspectFill.swift */; };
 		845F63BC215E5CEF008BF838 /* gulp-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 845F63BB215E5CEF008BF838 /* gulp-1.mp3 */; };
 		845F63BE215E5F77008BF838 /* soundtrack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 845F63BD215E5F77008BF838 /* soundtrack.mp3 */; };
+		845F63C0215E61BB008BF838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845F63BF215E61BA008BF838 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,6 @@
 		845F6387215D0066008BF838 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		845F6389215D008B008BF838 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		845F638B215D009E008BF838 /* GameScene+NodeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+NodeConfig.swift"; sourceTree = "<group>"; };
-		845F638E215D00EC008BF838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		845F6390215D0105008BF838 /* shine.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = shine.sks; sourceTree = "<group>"; };
 		845F6391215D0105008BF838 /* spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = spark.sks; sourceTree = "<group>"; };
 		845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "DJVI-Back On Track.mp3"; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		845F63B8215E50B9008BF838 /* SKSpriteNode+aspectFill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+aspectFill.swift"; sourceTree = "<group>"; };
 		845F63BB215E5CEF008BF838 /* gulp-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "gulp-1.mp3"; sourceTree = "<group>"; };
 		845F63BD215E5F77008BF838 /* soundtrack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundtrack.mp3; sourceTree = "<group>"; };
+		845F63BF215E61BA008BF838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +110,7 @@
 		845F638D215D00D4008BF838 /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				845F638E215D00EC008BF838 /* Assets.xcassets */,
+				845F63BF215E61BA008BF838 /* Assets.xcassets */,
 				845F6391215D0105008BF838 /* spark.sks */,
 				845F6390215D0105008BF838 /* shine.sks */,
 				845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */,
@@ -234,7 +234,7 @@
 				845F63BE215E5F77008BF838 /* soundtrack.mp3 in Resources */,
 				845F63AF215E3E17008BF838 /* Actions.sks in Resources */,
 				845F6397215D010E008BF838 /* MyParticle.sks in Resources */,
-				845F638F215D00EC008BF838 /* Assets.xcassets in Resources */,
+				845F63C0215E61BB008BF838 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
