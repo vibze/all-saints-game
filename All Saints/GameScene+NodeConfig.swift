@@ -140,8 +140,8 @@ extension GameScene {
     }
     
     func createHUD(){
-        scoreLabel = SKLabelNode(fontNamed: "Ubuntu")
-        scoreLabel.fontSize = screenWidth / 9.375
+        scoreLabel = SKLabelNode()
+        scoreLabel.fontSize = 20
         scoreLabel.fontColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         scoreLabel.position = CGPoint(x: screenWidth / 2, y: screenHeight / 1.1)
         scoreLabel.name = "scoreLabel"

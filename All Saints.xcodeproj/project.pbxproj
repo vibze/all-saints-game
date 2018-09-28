@@ -23,6 +23,8 @@
 		845F6396215D010E008BF838 /* DJVI-Back On Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */; };
 		845F6397215D010E008BF838 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6395215D010E008BF838 /* MyParticle.sks */; };
 		845F639A215DD033008BF838 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6399215DD033008BF838 /* Ship.swift */; };
+		845F639F215E2667008BF838 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F639E215E2667008BF838 /* HomeViewController.swift */; };
+		845F63A2215E2773008BF838 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63A1215E2773008BF838 /* ActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "DJVI-Back On Track.mp3"; sourceTree = "<group>"; };
 		845F6395215D010E008BF838 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		845F6399215DD033008BF838 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
+		845F639E215E2667008BF838 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		845F63A1215E2773008BF838 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 		845F636E215CFF87008BF838 /* All Saints */ = {
 			isa = PBXGroup;
 			children = (
+				845F63A0215E275F008BF838 /* Views */,
+				845F639B215E262A008BF838 /* Controllers */,
 				845F6398215DD023008BF838 /* Nodes */,
 				845F638D215D00D4008BF838 /* Media */,
 				845F636F215CFF87008BF838 /* AppDelegate.swift */,
@@ -111,6 +117,22 @@
 				845F6399215DD033008BF838 /* Ship.swift */,
 			);
 			path = Nodes;
+			sourceTree = "<group>";
+		};
+		845F639B215E262A008BF838 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				845F639E215E2667008BF838 /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		845F63A0215E275F008BF838 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				845F63A1215E2773008BF838 /* ActionButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +215,9 @@
 				845F638C215D009E008BF838 /* GameScene+NodeConfig.swift in Sources */,
 				845F6376215CFF87008BF838 /* GameScene.swift in Sources */,
 				845F6378215CFF87008BF838 /* GameViewController.swift in Sources */,
+				845F639F215E2667008BF838 /* HomeViewController.swift in Sources */,
 				845F638A215D008B008BF838 /* GameState.swift in Sources */,
+				845F63A2215E2773008BF838 /* ActionButton.swift in Sources */,
 				845F6370215CFF87008BF838 /* AppDelegate.swift in Sources */,
 				845F639A215DD033008BF838 /* Ship.swift in Sources */,
 				845F6388215D0066008BF838 /* Constants.swift in Sources */,
