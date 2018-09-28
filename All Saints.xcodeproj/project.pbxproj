@@ -26,6 +26,7 @@
 		845F63AF215E3E17008BF838 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F63AA215E3E12008BF838 /* Actions.sks */; };
 		845F63B3215E3E8D008BF838 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63B2215E3E8C008BF838 /* GameScene.swift */; };
 		845F63B5215E4385008BF838 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63B4215E4385008BF838 /* ScoreViewController.swift */; };
+		845F63B7215E4BDC008BF838 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63B6215E4BDC008BF838 /* Beer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		845F63AA215E3E12008BF838 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		845F63B2215E3E8C008BF838 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		845F63B4215E4385008BF838 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		845F63B6215E4BDC008BF838 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				845F6399215DD033008BF838 /* Ship.swift */,
+				845F63B6215E4BDC008BF838 /* Beer.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				845F638C215D009E008BF838 /* GameScene+NodeConfig.swift in Sources */,
 				845F6378215CFF87008BF838 /* GameViewController.swift in Sources */,
 				845F639F215E2667008BF838 /* HomeViewController.swift in Sources */,
+				845F63B7215E4BDC008BF838 /* Beer.swift in Sources */,
 				845F63B3215E3E8D008BF838 /* GameScene.swift in Sources */,
 				845F638A215D008B008BF838 /* GameState.swift in Sources */,
 				845F63A2215E2773008BF838 /* ActionButton.swift in Sources */,

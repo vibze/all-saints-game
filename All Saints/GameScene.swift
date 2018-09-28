@@ -315,4 +315,16 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         //let gameScene = MenuScene(size: screenSize)
         //self.view?.presentScene(gameScene)
     }
+    
+    func spawnBeer() {
+        let beer = BeerNode.construct()
+        beer.position = CGPoint(x: CGFloat.random(in: 0 ... frame.width), y: -100)
+        addChild(beer)
+        
+        let actions: [SKAction] = [
+            SKAction.moveBy(x: 0, y: frame.height + 200, duration: 1),
+            SKAction.removeFromParent()
+        ]
+        beer.run(SKAction.sequence(actions))
+    }
 }
