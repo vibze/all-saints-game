@@ -11,8 +11,10 @@ import SpriteKit
 
 
 struct bitMask {
-    static  let player : UInt32 = 1
-    static  let wall : UInt32 = 2
+    static let player : UInt32 = 0
+    static let beer: UInt32 = 1
+    static let milk: UInt32 = 2
+    static let corner: UInt32 = 3
 }
 
 enum RowType: Int{
@@ -40,11 +42,11 @@ extension GameScene {
             addChild(background)
         }
     }
-
+    
     func createWall() -> SKSpriteNode {
         var textures = [SKTexture]()
-        textures.append(SKTexture(image: #imageLiteral(resourceName: "red")))
-        textures.append(SKTexture(image: #imageLiteral(resourceName: "blue")))
+        textures.append(SKTexture(image: #imageLiteral(resourceName: "milk")))
+        textures.append(SKTexture(image: #imageLiteral(resourceName: "beer")))
         let rand = Int(arc4random_uniform(UInt32(textures.count)))
         let texture = textures[rand] as SKTexture
         
@@ -52,15 +54,15 @@ extension GameScene {
         wall.name = "wall"
         wall.position = CGPoint(x: 0, y: screenHeight / 0.78)
         wall.zPosition = 1
-        wall.size = CGSize(width: screenWidth / 2.2, height: screenHeight / 10.2)
+        wall.size = CGSize(width: 80, height: 80)
         wall.physicsBody?.isDynamic = false
         wall.physicsBody = SKPhysicsBody(circleOfRadius: screenHeight / 33.35)
-        wall.physicsBody?.categoryBitMask = bitMask.wall
+//        wall.physicsBody?.categoryBitMask = bitMask.wall
         wall.physicsBody?.collisionBitMask = 0
         
-        let rotate = SKAction.rotate(byAngle: .pi / 4, duration: 1)
-        let foreverRotate = SKAction.repeatForever(rotate)
-        wall.run(foreverRotate)
+//        let rotate = SKAction.rotate(byAngle: .pi / 4, duration: 1)
+//        let foreverRotate = SKAction.repeatForever(rotate)
+//        wall.run(foreverRotate)
         return wall
     }
     
@@ -74,6 +76,15 @@ extension GameScene {
         if i <= 0 {
             state = .end
         }
+    }
+    
+    func addBeers() {
+        let beer = Beer.construct(size: CGSize(width: 80, height: 80))
+//        var randomNumber = Int(arc4random_uniform(5))
+//        if randomNumber == 0 { randomNumber = 2 }
+        beer.position = CGPoint(x: screenWidth - 40, y: screenHeight / 0.78)
+        addChild(beer)
+        addMovement(wall: beer)
     }
     
     func addRow(type: RowType){
@@ -140,7 +151,7 @@ extension GameScene {
     }
     
     func createHUD(){
-        scoreLabel = SKLabelNode(fontNamed: "Ubuntu")
+//        scoreLabel = SKLabelNode(fontNamed: "Ubuntu")
         scoreLabel.fontSize = screenWidth / 9.375
         scoreLabel.fontColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         scoreLabel.position = CGPoint(x: screenWidth / 2, y: screenHeight / 1.1)

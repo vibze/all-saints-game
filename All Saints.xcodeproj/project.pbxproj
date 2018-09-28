@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180D305E215E195700C7A2EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180D305D215E195600C7A2EB /* Assets.xcassets */; };
+		180D3060215E197400C7A2EB /* soundtrack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 180D305F215E197400C7A2EB /* soundtrack.mp3 */; };
 		845F6370215CFF87008BF838 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F636F215CFF87008BF838 /* AppDelegate.swift */; };
 		845F6372215CFF87008BF838 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6371215CFF87008BF838 /* GameScene.sks */; };
 		845F6374215CFF87008BF838 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6373215CFF87008BF838 /* Actions.sks */; };
@@ -17,7 +19,6 @@
 		845F6388215D0066008BF838 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6387215D0066008BF838 /* Constants.swift */; };
 		845F638A215D008B008BF838 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6389215D008B008BF838 /* GameState.swift */; };
 		845F638C215D009E008BF838 /* GameScene+NodeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F638B215D009E008BF838 /* GameScene+NodeConfig.swift */; };
-		845F638F215D00EC008BF838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845F638E215D00EC008BF838 /* Assets.xcassets */; };
 		845F6392215D0105008BF838 /* shine.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6390215D0105008BF838 /* shine.sks */; };
 		845F6393215D0105008BF838 /* spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6391215D0105008BF838 /* spark.sks */; };
 		845F6396215D010E008BF838 /* DJVI-Back On Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180D305D215E195600C7A2EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		180D305F215E197400C7A2EB /* soundtrack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundtrack.mp3; sourceTree = "<group>"; };
 		845F636C215CFF87008BF838 /* All Saints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "All Saints.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		845F636F215CFF87008BF838 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845F6371215CFF87008BF838 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -38,7 +41,6 @@
 		845F6387215D0066008BF838 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		845F6389215D008B008BF838 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		845F638B215D009E008BF838 /* GameScene+NodeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+NodeConfig.swift"; sourceTree = "<group>"; };
-		845F638E215D00EC008BF838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../garyshker/space/Assets.xcassets; sourceTree = "<group>"; };
 		845F6390215D0105008BF838 /* shine.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = shine.sks; sourceTree = "<group>"; };
 		845F6391215D0105008BF838 /* spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = spark.sks; sourceTree = "<group>"; };
 		845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "DJVI-Back On Track.mp3"; sourceTree = "<group>"; };
@@ -57,6 +59,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180D3061215E273B00C7A2EB /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				845F636F215CFF87008BF838 /* AppDelegate.swift */,
+				845F6373215CFF87008BF838 /* Actions.sks */,
+				845F6371215CFF87008BF838 /* GameScene.sks */,
+				845F637E215CFF88008BF838 /* LaunchScreen.storyboard */,
+				845F6379215CFF87008BF838 /* Main.storyboard */,
+			);
+			path = misc;
+			sourceTree = "<group>";
+		};
 		845F6363215CFF87008BF838 = {
 			isa = PBXGroup;
 			children = (
@@ -78,17 +92,13 @@
 			children = (
 				845F6398215DD023008BF838 /* Nodes */,
 				845F638D215D00D4008BF838 /* Media */,
-				845F636F215CFF87008BF838 /* AppDelegate.swift */,
-				845F6371215CFF87008BF838 /* GameScene.sks */,
-				845F6373215CFF87008BF838 /* Actions.sks */,
 				845F6375215CFF87008BF838 /* GameScene.swift */,
 				845F6377215CFF87008BF838 /* GameViewController.swift */,
-				845F6379215CFF87008BF838 /* Main.storyboard */,
-				845F637E215CFF88008BF838 /* LaunchScreen.storyboard */,
-				845F6381215CFF88008BF838 /* Info.plist */,
 				845F6387215D0066008BF838 /* Constants.swift */,
 				845F6389215D008B008BF838 /* GameState.swift */,
 				845F638B215D009E008BF838 /* GameScene+NodeConfig.swift */,
+				845F6381215CFF88008BF838 /* Info.plist */,
+				180D3061215E273B00C7A2EB /* misc */,
 			);
 			path = "All Saints";
 			sourceTree = "<group>";
@@ -96,11 +106,12 @@
 		845F638D215D00D4008BF838 /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				845F638E215D00EC008BF838 /* Assets.xcassets */,
+				180D305D215E195600C7A2EB /* Assets.xcassets */,
 				845F6391215D0105008BF838 /* spark.sks */,
 				845F6390215D0105008BF838 /* shine.sks */,
 				845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */,
 				845F6395215D010E008BF838 /* MyParticle.sks */,
+				180D305F215E197400C7A2EB /* soundtrack.mp3 */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -175,10 +186,11 @@
 				845F6396215D010E008BF838 /* DJVI-Back On Track.mp3 in Resources */,
 				845F637B215CFF87008BF838 /* Main.storyboard in Resources */,
 				845F6392215D0105008BF838 /* shine.sks in Resources */,
+				180D3060215E197400C7A2EB /* soundtrack.mp3 in Resources */,
+				180D305E215E195700C7A2EB /* Assets.xcassets in Resources */,
 				845F6397215D010E008BF838 /* MyParticle.sks in Resources */,
 				845F6372215CFF87008BF838 /* GameScene.sks in Resources */,
 				845F6380215CFF88008BF838 /* LaunchScreen.storyboard in Resources */,
-				845F638F215D00EC008BF838 /* Assets.xcassets in Resources */,
 				845F6374215CFF87008BF838 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,7 +375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = R87MWZ88KR;
 				INFOPLIST_FILE = "All Saints/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -372,7 +384,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kz.dar.allsaints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development kz.dar.allsaints";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
