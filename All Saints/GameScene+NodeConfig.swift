@@ -35,8 +35,8 @@ extension GameScene {
         let moveForever = SKAction.repeatForever(SKAction.sequence([move,replace]))
         for i in 0...3 {
             background = SKSpriteNode(texture: SKTexture(image: #imageLiteral(resourceName: "GameWall")))
-            background.size = CGSize(width: screenWidth, height: screenHeight)
-            background.position = CGPoint(x: screenWidth / 2 , y: screenHeight * CGFloat(i))
+            background.aspectFillToSize(fillSize: frame.size)
+            background.position = CGPoint(x: frame.size.width / 2 , y: frame.size.height * CGFloat(i))
             background.run(moveForever)
             background.zPosition = -1
             addChild(background)

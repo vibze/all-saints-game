@@ -20,7 +20,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     var score = 0
     
-    let ship = Ship.construct(size: CGSize(width: 100, height: 140))
+    let ship = Ship.construct()
     
     var background: SKSpriteNode!
     var boomEmitter:SKEmitterNode!
@@ -109,7 +109,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         ship.position = CGPoint(x: view.frame.width/2, y: view.frame.width - ship.size.height)
         addChild(ship)
         
-        self.backgroundColor = UIColor(red: 53/255, green: 43/255, blue: 77/255, alpha: 100)
+        backgroundColor = #colorLiteral(red: 0.1098039216, green: 0.1607843137, blue: 0.06274509804, alpha: 1)
         setupWorldPhysics()
         moveBackground()
         createHUD()

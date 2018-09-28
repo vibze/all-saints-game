@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		180D3063215E43C500C7A2EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180D3062215E43C500C7A2EB /* Assets.xcassets */; };
-		180D3065215E443400C7A2EB /* soundtrack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 180D3064215E443400C7A2EB /* soundtrack.mp3 */; };
 		845F6378215CFF87008BF838 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6377215CFF87008BF838 /* GameViewController.swift */; };
 		845F6388215D0066008BF838 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6387215D0066008BF838 /* Constants.swift */; };
 		845F638A215D008B008BF838 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6389215D008B008BF838 /* GameState.swift */; };
 		845F638C215D009E008BF838 /* GameScene+NodeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F638B215D009E008BF838 /* GameScene+NodeConfig.swift */; };
+		845F638F215D00EC008BF838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845F638E215D00EC008BF838 /* Assets.xcassets */; };
 		845F6392215D0105008BF838 /* shine.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6390215D0105008BF838 /* shine.sks */; };
 		845F6393215D0105008BF838 /* spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6391215D0105008BF838 /* spark.sks */; };
 		845F6396215D010E008BF838 /* DJVI-Back On Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */; };
@@ -28,17 +27,17 @@
 		845F63B3215E3E8D008BF838 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63B2215E3E8C008BF838 /* GameScene.swift */; };
 		845F63B5215E4385008BF838 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63B4215E4385008BF838 /* ScoreViewController.swift */; };
 		845F63B7215E4BDC008BF838 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63B6215E4BDC008BF838 /* Beer.swift */; };
+		845F63B9215E50B9008BF838 /* SKSpriteNode+aspectFill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63B8215E50B9008BF838 /* SKSpriteNode+aspectFill.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		180D3062215E43C500C7A2EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		180D3064215E443400C7A2EB /* soundtrack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundtrack.mp3; sourceTree = "<group>"; };
 		845F636C215CFF87008BF838 /* All Saints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "All Saints.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		845F6377215CFF87008BF838 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		845F6381215CFF88008BF838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		845F6387215D0066008BF838 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		845F6389215D008B008BF838 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		845F638B215D009E008BF838 /* GameScene+NodeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+NodeConfig.swift"; sourceTree = "<group>"; };
+		845F638E215D00EC008BF838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../garyshker/space/Assets.xcassets; sourceTree = "<group>"; };
 		845F6390215D0105008BF838 /* shine.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = shine.sks; sourceTree = "<group>"; };
 		845F6391215D0105008BF838 /* spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = spark.sks; sourceTree = "<group>"; };
 		845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "DJVI-Back On Track.mp3"; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		845F63B2215E3E8C008BF838 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		845F63B4215E4385008BF838 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		845F63B6215E4BDC008BF838 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		845F63B8215E50B9008BF838 /* SKSpriteNode+aspectFill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+aspectFill.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +97,7 @@
 				845F6387215D0066008BF838 /* Constants.swift */,
 				845F6389215D008B008BF838 /* GameState.swift */,
 				845F638B215D009E008BF838 /* GameScene+NodeConfig.swift */,
+				845F63B8215E50B9008BF838 /* SKSpriteNode+aspectFill.swift */,
 			);
 			path = "All Saints";
 			sourceTree = "<group>";
@@ -104,11 +105,10 @@
 		845F638D215D00D4008BF838 /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				180D3062215E43C500C7A2EB /* Assets.xcassets */,
+				845F638E215D00EC008BF838 /* Assets.xcassets */,
 				845F6391215D0105008BF838 /* spark.sks */,
 				845F6390215D0105008BF838 /* shine.sks */,
 				845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */,
-				180D3064215E443400C7A2EB /* soundtrack.mp3 */,
 				845F6395215D010E008BF838 /* MyParticle.sks */,
 			);
 			path = Media;
@@ -214,12 +214,11 @@
 				845F6396215D010E008BF838 /* DJVI-Back On Track.mp3 in Resources */,
 				845F63AB215E3E17008BF838 /* LaunchScreen.storyboard in Resources */,
 				845F63AD215E3E17008BF838 /* GameScene.sks in Resources */,
-				180D3065215E443400C7A2EB /* soundtrack.mp3 in Resources */,
-				180D3063215E43C500C7A2EB /* Assets.xcassets in Resources */,
 				845F6392215D0105008BF838 /* shine.sks in Resources */,
 				845F63AC215E3E17008BF838 /* Main.storyboard in Resources */,
 				845F63AF215E3E17008BF838 /* Actions.sks in Resources */,
 				845F6397215D010E008BF838 /* MyParticle.sks in Resources */,
+				845F638F215D00EC008BF838 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				845F638C215D009E008BF838 /* GameScene+NodeConfig.swift in Sources */,
+				845F63B9215E50B9008BF838 /* SKSpriteNode+aspectFill.swift in Sources */,
 				845F6378215CFF87008BF838 /* GameViewController.swift in Sources */,
 				845F639F215E2667008BF838 /* HomeViewController.swift in Sources */,
 				845F63B7215E4BDC008BF838 /* Beer.swift in Sources */,
