@@ -10,5 +10,6 @@ import UIKit
 
 
 class HomeViewController: UIViewController {
-    
+    @IBAction func didTapStartButton(_ sender: Any) {
+    }
 }
