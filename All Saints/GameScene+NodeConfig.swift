@@ -11,14 +11,10 @@ import SpriteKit
 
 
 struct bitMask {
-    static let player : UInt32 = 0
-    static let beer: UInt32 = 1
-    static let milk: UInt32 = 2
-    static let corner: UInt32 = 3
-}
-
-enum RowType: Int{
-    case one, two, three, four, five, six
+    static let player : UInt32 = 1
+    static let beer: UInt32 = 2
+    static let milk: UInt32 = 3
+    static let corner: UInt32 = 4
 }
 
 extension GameScene {
@@ -29,12 +25,12 @@ extension GameScene {
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
     }
     
-    func moveBackground(){
+    func moveBackground() {
         let move = SKAction.moveBy(x: 0, y: -screenHeight, duration: 5)
         let replace = SKAction.moveBy(x: 0, y: screenHeight, duration: 0)
         let moveForever = SKAction.repeatForever(SKAction.sequence([move,replace]))
         for i in 0...3 {
-            background = SKSpriteNode(texture: SKTexture(image: #imageLiteral(resourceName: "GameWall")))
+            background = SKSpriteNode(texture: SKTexture(image: #imageLiteral(resourceName: "backgroundImage")))
             background.aspectFillToSize(fillSize: frame.size)
             background.position = CGPoint(x: frame.size.width / 2 , y: frame.size.height * CGFloat(i))
             background.run(moveForever)

@@ -29,6 +29,14 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     var background: SKSpriteNode!
     var boomEmitter:SKEmitterNode!
     var swipeSprite: SKSpriteNode!
+    //    var scoreLabel = SKLabelNode()
+    //    var timerLabel = SKLabelNode()
+    var updateTime = TimeInterval()
+    var yieldTime  = TimeInterval()
+    //MARK: Counter
+    var counter = 0
+    var counterTimer = Timer()
+    var counterStartValue = 60
     
     // Touch handling
     var i: Float = 5
@@ -62,24 +70,24 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     // MARK: - Scene ovrrided methods
     override func update(_ currentTime: TimeInterval) {
-//        var timeSinceLastUpdate = currentTime - updateTime
-//        updateTime = currentTime
-//        if state == .play{
-//            i -= 0.003
-//        }
-//        if timeSinceLastUpdate > 2.0{
-//            timeSinceLastUpdate = 1/60
-//            updateTime = currentTime
-//        }
-//        guard state == .play else { return }
-//        updateTimerInterval(timeSinceLastUpdate: timeSinceLastUpdate)
+        var timeSinceLastUpdate = currentTime - updateTime
+        updateTime = currentTime
+        
+        if timeSinceLastUpdate > 2.0 {
+            timeSinceLastUpdate = 1/60
+            updateTime = currentTime
+        }
+
+        guard state == .play else { return }
+        updateTimerInterval(timeSinceLastUpdate: timeSinceLastUpdate)
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
         ship.ignite()
-        if contact.bodyA.node?.name == "player" { state = .end }
+        if contact.bodyA.node?.name == "player" {
+            counter += 1
+        }
     }
-    
     
     var shipInitialX: CGFloat = 0
     var touchInitialX: CGFloat = 0
@@ -127,22 +135,20 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
             ship.ignite()
             removeTutorial()
         case .pause:
-//            pauseGame()
+            //            pauseGame()
             backgroundMusic.run(SKAction.pause())
         case .end:
             break
-//            stopGame()
+            //            stopGame()
         }
     }
     
-    func updateTimerInterval(timeSinceLastUpdate: TimeInterval){
-//        yieldTime += timeSinceLastUpdate
-//        if yieldTime > 1.5{
-//            yieldTime = 0
-//            score+=1
-//            scoreLabel.text = "\(score)"
-//            addRandom()
-//        }
+    func updateTimerInterval(timeSinceLastUpdate: TimeInterval) {
+        yieldTime += timeSinceLastUpdate
+        if yieldTime > 1.5 {
+            yieldTime = 0
+            spawnBeer()
+        }
     }
     
     //MARK: Score
@@ -152,13 +158,13 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         }
     }
     
-    func spawnBeer() {
+    @objc func spawnBeer() {
         let beer = BeerNode.construct()
-        beer.position = CGPoint(x: CGFloat.random(in: 0 ... frame.width), y: -100)
+        beer.position = CGPoint(x: CGFloat.random(in: -20 ... frame.width + 25 ), y: frame.height)
         addChild(beer)
         
         let actions: [SKAction] = [
-            SKAction.moveBy(x: 0, y: frame.height + 200, duration: 1),
+            SKAction.moveTo(y: -beer.position.y, duration: 3.5),
             SKAction.removeFromParent()
         ]
         beer.run(SKAction.sequence(actions))

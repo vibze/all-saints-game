@@ -18,6 +18,7 @@ class Ship: SKSpriteNode {
         ship.zPosition = 1
         ship.speed = 10
         ship.physicsBody?.isDynamic = true
+        ship.physicsBody?.usesPreciseCollisionDetection = true
         ship.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: ship.size.width - 50, height: ship.size.height / 2))
         ship.physicsBody?.categoryBitMask = bitMask.player
         ship.physicsBody?.collisionBitMask = bitMask.player
