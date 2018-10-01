@@ -14,7 +14,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var skView: SKView!
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var scoreLabel: ScoreLabelView!
+
     let scene = GameScene(size: UIScreen.main.bounds.size)
     let pauseView = PauseView.fromXib
     
@@ -91,6 +92,6 @@ extension GameViewController: GameSceneDelegate {
     }
     
     func gameScene(_ gameScene: GameScene, scoreDidChange score: Int) {
-        scoreLabel.text = "Выпил: \(score)"
+        scoreLabel.score = score
     }
 }

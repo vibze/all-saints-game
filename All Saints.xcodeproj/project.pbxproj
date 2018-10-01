@@ -32,6 +32,7 @@
 		845F63BE215E5F77008BF838 /* soundtrack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 845F63BD215E5F77008BF838 /* soundtrack.mp3 */; };
 		845F63C0215E61BB008BF838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845F63BF215E61BA008BF838 /* Assets.xcassets */; };
 		845F63C22161F617008BF838 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63C12161F615008BF838 /* PauseView.swift */; };
+		84C1DA282162159600025FE0 /* ScoreLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1DA272162159600025FE0 /* ScoreLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		845F63BD215E5F77008BF838 /* soundtrack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundtrack.mp3; sourceTree = "<group>"; };
 		845F63BF215E61BA008BF838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		845F63C12161F615008BF838 /* PauseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
+		84C1DA272162159600025FE0 /* ScoreLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				845F63A1215E2773008BF838 /* ActionButton.swift */,
 				845F63C12161F615008BF838 /* PauseView.swift */,
+				84C1DA272162159600025FE0 /* ScoreLabelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				845F6378215CFF87008BF838 /* GameViewController.swift in Sources */,
 				845F639F215E2667008BF838 /* HomeViewController.swift in Sources */,
 				845F63B7215E4BDC008BF838 /* Beer.swift in Sources */,
+				84C1DA282162159600025FE0 /* ScoreLabelView.swift in Sources */,
 				845F63B3215E3E8D008BF838 /* GameScene.swift in Sources */,
 				845F638A215D008B008BF838 /* GameState.swift in Sources */,
 				845F63A2215E2773008BF838 /* ActionButton.swift in Sources */,
