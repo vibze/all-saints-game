@@ -22,6 +22,9 @@ class GameViewController: UIViewController {
     //MARK: Counter
     var counter = 60 {
         didSet {
+            guard counter >= 0 else {
+                return
+            }
             timerLabel.text = "\(counter)"
         }
     }
@@ -37,7 +40,6 @@ class GameViewController: UIViewController {
             counterTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementCounter), userInfo: nil, repeats: true)
             return
         }
-        
         counterTimer.invalidate()
     }
     
@@ -45,7 +47,11 @@ class GameViewController: UIViewController {
         counter -= 1
         scene.spawnBeer()
         scene.beerSpeed -= 0.05
-        scene.shipSpeed -= 1
+        
+        guard counter == 0 else {
+            return
+        }
+        scene.state = .end
     }
     
     override func viewDidLoad() {
