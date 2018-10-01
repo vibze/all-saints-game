@@ -14,7 +14,7 @@ class Ship: SKSpriteNode {
     static func construct() -> Ship {
         let ship = Ship(texture: SKTexture(image: #imageLiteral(resourceName: "Rocket")))
         ship.name = "player"
-        ship.size = CGSize(width: 110, height: 130)
+        ship.size = CGSize(width: 110, height: 170)
         ship.zPosition = 1
         ship.speed = 10
         ship.physicsBody?.isDynamic = true
@@ -23,14 +23,14 @@ class Ship: SKSpriteNode {
         ship.physicsBody?.collisionBitMask = bitMask.player
         ship.physicsBody?.contactTestBitMask = bitMask.beer & bitMask.milk & bitMask.corner
         
-        ship.burnerEmitter.position = CGPoint(x: 0, y: -80)
+        ship.burnerEmitter.position = CGPoint(x: 0, y: -90)
         ship.burnerEmitter.zPosition = 1
         ship.burnerEmitter.isHidden = true
         ship.addChild(ship.burnerEmitter)
         
         ship.addChild(ship.photoNode)
         ship.photoNode.size = CGSize(width: 50, height: 50)
-        ship.photoNode.position = CGPoint(x: 0, y: 5)
+        ship.photoNode.position = CGPoint(x: 0, y: 15)
         ship.setRandomPhoto()
         
         return ship
@@ -45,6 +45,6 @@ class Ship: SKSpriteNode {
 
     func setRandomPhoto() {
         let i = Int.random(in: 1 ... 7)
-        photoNode.texture = SKTexture(imageNamed: "lex-\(i)")
+        photoNode.texture = SKTexture(imageNamed: "lex-1")
     }
 }
