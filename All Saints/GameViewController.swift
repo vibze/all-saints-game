@@ -52,6 +52,7 @@ class GameViewController: UIViewController {
         counter -= 1
         scene.spawnBeer()
         scene.beerSpeed -= 0.05
+        scene.shipSpeed -= 1
         
         guard counter == 0 else {
             return

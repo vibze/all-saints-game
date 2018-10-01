@@ -47,7 +47,7 @@ class Ship: SKSpriteNode {
 
     func setRandomPhoto() {
         let i = Int.random(in: 1 ... 7)
-        photoNode.texture = SKTexture(imageNamed: "lex-1")
+        photoNode.texture = SKTexture(imageNamed: "lex-\(i)")
         photoNode.zPosition = 1
     }
 }

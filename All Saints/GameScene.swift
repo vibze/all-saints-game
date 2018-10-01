@@ -24,22 +24,24 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     weak var sceneDelegate: GameSceneDelegate?
     
+    var move = SKAction()
     let ship = Ship.construct()
     var beerSpeed = 3.5
-    var shipSpeed = 5.0
+    var shipSpeed = 5.0 {
+        didSet {
+
+        }
+    }
     
     var background: SKSpriteNode!
     var boomEmitter:SKEmitterNode!
     var swipeSprite: SKSpriteNode!
-    //MARK: Counter
-    var counter = 0
-    var counterTimer = Timer()
-    var counterStartValue = 60
-    
+
     // Touch handling
     var i: Float = 5
     var backgroundMusic = SKAudioNode()
     var crashMusic = SKAudioNode()
+
     
     // MARK: - Did move to skVIew
     override func didMove(to view: SKView) {
