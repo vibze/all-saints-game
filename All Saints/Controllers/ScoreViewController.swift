@@ -9,11 +9,8 @@
 import UIKit
 
 class ScoreViewController: UIViewController {
-    var score: Double = 0 {
-        didSet {
-            score = score/60
-        }
-    }
+    var beersSpawned: Int = 1
+    var score: Int = 0
     
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -23,6 +20,6 @@ class ScoreViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        scoreLabel.text = "\(Int(score*100))%"
+        scoreLabel.text = "\(Int(Double(score)/Double(beersSpawned)*100))%"
     }
 }
