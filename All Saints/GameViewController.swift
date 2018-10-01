@@ -15,6 +15,11 @@ class GameViewController: UIViewController {
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: ScoreLabelView!
+    var totalScore = 0 {
+        didSet {
+            scoreLabel.score = totalScore
+        }
+    }
 
     let scene = GameScene(size: UIScreen.main.bounds.size)
     let pauseView = PauseView.fromXib
@@ -44,9 +49,6 @@ class GameViewController: UIViewController {
     }
     
     @objc private func decrementCounter() {
-        if counter == 0 {
-            performSegue(withIdentifier: "showResult", sender: self)
-        }
         counter -= 1
         scene.spawnBeer()
         scene.beerSpeed -= 0.05
@@ -55,6 +57,14 @@ class GameViewController: UIViewController {
             return
         }
         scene.state = .end
+        performSegue(withIdentifier: "showResult", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showResult" {
+            let resultPage = segue.destination as! ScoreViewController
+            resultPage.score = Double(totalScore)
+        }
     }
     
     override func viewDidLoad() {
@@ -101,6 +111,6 @@ extension GameViewController: GameSceneDelegate {
     }
     
     func gameScene(_ gameScene: GameScene, scoreDidChange score: Int) {
-        scoreLabel.score = score
+        totalScore = score
     }
 }

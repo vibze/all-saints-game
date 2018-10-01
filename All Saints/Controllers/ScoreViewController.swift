@@ -9,8 +9,20 @@
 import UIKit
 
 class ScoreViewController: UIViewController {
+    var score: Double = 0 {
+        didSet {
+            score = score/60
+        }
+    }
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     @IBAction func didTapDoneButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "unwindToHomePage", sender: self)
+    }
+    
+    override func viewDidLoad() {
+        scoreLabel.text = "\(Int(score*100))%"
     }
 }

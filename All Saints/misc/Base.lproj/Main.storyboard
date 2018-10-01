@@ -196,6 +196,7 @@
                         <viewLayoutGuide key="safeArea" id="HzJ-r8-AHP"/>
                     </view>
                     <connections>
+                        <outlet property="scoreLabel" destination="Wmo-oA-J4f" id="DEv-XL-UVQ"/>
                         <segue destination="tnm-Ye-VRP" kind="unwind" identifier="unwindToHomePage" unwindAction="unwindToHomePageWithSegue:" id="Nne-1k-pWE"/>
                     </connections>
                 </viewController>
