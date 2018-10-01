@@ -25,12 +25,11 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     weak var sceneDelegate: GameSceneDelegate?
     
     let ship = Ship.construct()
-    
+    var beerSpeed = 3.5
+    var shipSpeed = 5.0
     var background: SKSpriteNode!
     var boomEmitter:SKEmitterNode!
     var swipeSprite: SKSpriteNode!
-    //    var scoreLabel = SKLabelNode()
-    //    var timerLabel = SKLabelNode()
     var updateTime = TimeInterval()
     var yieldTime  = TimeInterval()
     //MARK: Counter
@@ -82,7 +81,8 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         ship.ignite()
         if contact.bodyA.node?.name == "player" {
-            counter += 1
+            score += 1
+            contact.bodyB.node?.removeFromParent()
         }
     }
     
@@ -144,7 +144,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         yieldTime += timeSinceLastUpdate
         if yieldTime > 1.5 {
             yieldTime = 0
-            spawnBeer()
+//            spawnBeer()
         }
     }
     
@@ -155,15 +155,16 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         }
     }
     
-    @objc func spawnBeer() {
-        let beer = BeerNode.construct()
-        beer.position = CGPoint(x: CGFloat.random(in: -20 ... frame.width + 25 ), y: frame.height)
-        addChild(beer)
-        
-        let actions: [SKAction] = [
-            SKAction.moveTo(y: -beer.position.y, duration: 3.5),
-            SKAction.removeFromParent()
-        ]
-        beer.run(SKAction.sequence(actions))
+   func spawnBeer() {
+    let beer = BeerNode.construct()
+
+    beer.position = CGPoint(x: CGFloat.random(in: beer.size.width / 2 ... frame.width - beer.size.width / 2), y: frame.height)
+    addChild(beer)
+    
+    let actions: [SKAction] = [
+        SKAction.moveTo(y: -beer.position.y, duration: beerSpeed),
+        SKAction.removeFromParent()
+    ]
+    beer.run(SKAction.sequence(actions))
     }
 }

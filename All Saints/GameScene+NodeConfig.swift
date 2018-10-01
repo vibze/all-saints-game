@@ -26,7 +26,7 @@ extension GameScene {
     }
     
     func moveBackground() {
-        let move = SKAction.moveBy(x: 0, y: -screenHeight, duration: 5)
+        let move = SKAction.moveBy(x: 0, y: -screenHeight, duration: shipSpeed)
         let replace = SKAction.moveBy(x: 0, y: screenHeight, duration: 0)
         let moveForever = SKAction.repeatForever(SKAction.sequence([move,replace]))
         for i in 0...3 {

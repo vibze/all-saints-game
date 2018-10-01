@@ -40,6 +40,7 @@ class Ship: SKSpriteNode {
     let burnerEmitter = SKEmitterNode(fileNamed: "spark.sks")!
     let photoNode = SKSpriteNode()
     
+    
     func ignite() {
         burnerEmitter.isHidden = false
     }
@@ -47,5 +48,6 @@ class Ship: SKSpriteNode {
     func setRandomPhoto() {
         let i = Int.random(in: 1 ... 7)
         photoNode.texture = SKTexture(imageNamed: "lex-1")
+        photoNode.zPosition = 1
     }
 }
