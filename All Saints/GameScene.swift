@@ -116,11 +116,12 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
             ship.ignite()
             removeTutorial()
         case .pause:
-            //            pauseGame()
             backgroundMusic.run(SKAction.pause())
         case .end:
+            //pause()
+            //ship.size = CGSize(width: ship.size.width*1.5, height: ship.size.height*1.5)
+            //backgroundMusic.run(SKAction.pause())
             break
-            //            stopGame()
         }
     }
     

@@ -127,7 +127,7 @@
                         <outlet property="scoreLabel" destination="QSJ-xZ-IxK" id="CBW-Ht-BH5"/>
                         <outlet property="skView" destination="OyS-gQ-vbn" id="TpG-Yd-dLe"/>
                         <outlet property="timerLabel" destination="noU-hq-7TH" id="4c4-sa-KDE"/>
-                        <segue destination="I76-s9-dTR" kind="show" identifier="showResult" id="SVH-H1-0VH"/>
+                        <segue destination="I76-s9-dTR" kind="presentation" identifier="showResult" modalTransitionStyle="crossDissolve" id="SVH-H1-0VH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nv4-ti-HYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -209,6 +209,6 @@
     <resources>
         <image name="MenuBackground" width="375" height="812"/>
         <image name="MenuLogo" width="200" height="200"/>
-        <image name="pause" width="128" height="128"/>
+        <image name="pause" width="102.40000152587891" height="102.40000152587891"/>
     </resources>
 </document>

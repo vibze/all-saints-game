@@ -49,15 +49,15 @@ class GameViewController: UIViewController {
     }
     
     @objc private func decrementCounter() {
-        counter -= 1
-        scene.spawnBeer()
-        scene.beerSpeed -= 0.05
-        
-        guard counter == 0 else {
-            return
+        if counter >= 1 {
+            counter -= 1
+            scene.spawnBeer()
+            scene.beerSpeed -= 0.05
+        } else {
+            counterTimer.invalidate()
+            scene.state = .end
+            performSegue(withIdentifier: "showResult", sender: self)
         }
-        scene.state = .end
-        performSegue(withIdentifier: "showResult", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -80,11 +80,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func pauseTapped(_ sender: UIButton) {
-        didPause = true
-        pauseView.delegate = self
-        scene.state = .pause
-        scene.view?.isPaused = true
-        view.addSubview(pauseView)
+        pause()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -94,14 +90,35 @@ class GameViewController: UIViewController {
             return .all
         }
     }
+    
+    fileprivate func pause() {
+        didPause = true
+        pauseView.delegate = self
+        scene.state = .pause
+        scene.view?.isPaused = true
+        view.addSubview(pauseView)
+        pauseView.frame = view.bounds
+        pauseView.alpha = 0
+        UIView.animate(withDuration: 0.3) {
+            self.pauseView.alpha = 1
+        }
+    }
+    
+    fileprivate func resume() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.pauseView.alpha = 0
+        }) { result in
+            self.pauseView.removeFromSuperview()
+            self.didPause = false
+            self.scene.state = .play
+            self.scene.view?.isPaused = false
+        }
+    }
 }
 
 extension GameViewController: PauseViewDelegate {
     func continueButtonPressed(_ pauseView: PauseView) {
-        didPause = false
-        scene.state = .play
-        scene.view?.isPaused = false
-        pauseView.removeFromSuperview()
+        resume()
     }
 }
 
@@ -112,5 +129,6 @@ extension GameViewController: GameSceneDelegate {
     
     func gameScene(_ gameScene: GameScene, scoreDidChange score: Int) {
         totalScore = score
+        gameScene.ship.setRandomPhoto()
     }
 }
