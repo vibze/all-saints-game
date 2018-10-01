@@ -63,9 +63,6 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         }
         
         state = .tutorial
-        
-//        counter = counterStartValue
-//        startCounter()
     }
     
     // MARK: - Scene ovrrided methods
