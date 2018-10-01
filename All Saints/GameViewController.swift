@@ -40,6 +40,10 @@ class GameViewController: UIViewController {
             return .all
         }
     }
-    
-    
+}
+
+extension GameViewController: PauseViewDelegate {
+    func continueButtonPressed(_ pauseView: PauseView) {
+        scene.state = .play
+    }
 }
