@@ -11,7 +11,7 @@ import SpriteKit
 
 class BeerNode: SKSpriteNode {
     static func construct() -> BeerNode {
-        let beer = BeerNode(texture: SKTexture(image: #imageLiteral(resourceName: "beer")))
+        let beer = BeerNode(texture: SKTexture(image: #imageLiteral(resourceName: "beerImage")))
         beer.name = "beer"
         beer.size = CGSize(width: 65, height: 65)
         beer.zPosition = 1

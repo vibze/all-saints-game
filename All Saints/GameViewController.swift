@@ -43,7 +43,6 @@ class GameViewController: UIViewController {
     @objc private func decrementCounter() {
         counter -= 1
         scene.spawnBeer()
-        scene.moveBackground()
         scene.beerSpeed -= 0.05
         scene.shipSpeed -= 1
     }

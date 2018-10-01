@@ -26,7 +26,11 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     let ship = Ship.construct()
     var beerSpeed = 3.5
-    var shipSpeed = 5.0
+    var shipSpeed = 5.0 {
+        didSet {
+            
+        }
+    }
     var background: SKSpriteNode!
     var boomEmitter:SKEmitterNode!
     var swipeSprite: SKSpriteNode!
@@ -50,7 +54,6 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         backgroundColor = #colorLiteral(red: 0.1098039216, green: 0.1607843137, blue: 0.06274509804, alpha: 1)
         setupWorldPhysics()
         moveBackground()
-        
         if let url = Bundle.main.url(forResource: "gulp-1.mp3", withExtension: "mp3") {
             crashMusic = SKAudioNode(url: url)
             addChild(crashMusic)
