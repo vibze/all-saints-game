@@ -12,19 +12,12 @@ protocol PauseViewDelegate: class {
     func continueButtonPressed(_ pauseView: PauseView)
 }
 
-class PauseView: UIView {
+class PauseView: UIView, XibLoadable {
+    typealias View = PauseView
     @IBOutlet weak var continueButton: UIButton!
     weak var delegate: PauseViewDelegate?
     
     @IBAction func continueTapped(_ sender: UIButton) {
         delegate?.continueButtonPressed(self)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

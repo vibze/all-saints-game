@@ -35,69 +35,6 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     var backgroundMusic = SKAudioNode()
     var crashMusic = SKAudioNode()
     
-    let pauseView = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
-    
-    private lazy var gameOverView: UIView = {
-        let goview = UIView()
-        goview.backgroundColor = UIColor(red: 69/255, green: 50/255, blue: 88/255, alpha: 100)
-        goview.layer.borderWidth = 3
-        goview.layer.borderColor = UIColor.white.cgColor
-        return goview
-    }()
-    
-    private lazy var gameOverLabel: UILabel = {
-        let gameOver = UILabel()
-        gameOver.text = "GAME OVER"
-        gameOver.textColor = .white
-//        gameOver.font = UIFont(name: "Ubuntu", size: screenWidth / 9.375 )
-        return gameOver
-    }()
-    
-    private lazy var finishScoreLabel: UILabel = {
-        let finishScore = UILabel()
-//        finishScore.font = UIFont(name: "Ubuntu", size: screenWidth / 12.5)
-        finishScore.textColor = UIColor(red: 85/255, green: 190/255, blue: 240/255, alpha: 100)
-        return finishScore
-    }()
-    
-    private lazy var highScoreLabel: UILabel = {
-        let highScore = UILabel()
-//        highScore.font = UIFont(name: "Ubuntu", size: screenWidth / 12.5)
-        highScore.textAlignment = .center
-        highScore.textColor = UIColor(red: 85/255, green: 190/255, blue: 240/255, alpha: 100)
-        return highScore
-    }()
-    
-    private lazy var menuButton: UIButton = {
-        let mButton = UIButton()
-        mButton.setImage(#imageLiteral(resourceName: "earth"), for: .normal)
-        mButton.addTarget(self, action: #selector(backToMenu), for: .touchUpInside)
-        return mButton
-    }()
-    private lazy var restartButton: UIButton = {
-        let gameRestart = UIButton()
-        gameRestart.setImage(#imageLiteral(resourceName: "redo"), for: .normal)
-        gameRestart.addTarget(self, action: #selector(restartGame), for: .touchUpInside)
-        return gameRestart
-    }()
-    
-    private lazy var restartLabel: UILabel = {
-        let labelRestart = UILabel()
-        labelRestart.text = "RESTART"
-//        labelRestart.font = UIFont(name: "Ubuntu", size: screenWidth / 26.7 )
-        labelRestart.textColor = .white
-        return labelRestart
-        
-    }()
-    private lazy var menuLabel: UILabel = {
-        let labelMenu = UILabel()
-        labelMenu.text = "MENU"
-//        labelMenu.font = UIFont(name: "Ubuntu", size: screenWidth / 26.7 )
-        labelMenu.textColor = .white
-        return labelMenu
-        
-    }()
-    
     // MARK: - Did move to skVIew
     override func didMove(to view: SKView) {
         ship.position = CGPoint(x: view.frame.width/2, y: view.frame.width - ship.size.height - 40)
@@ -225,10 +162,5 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
             SKAction.removeFromParent()
         ]
         beer.run(SKAction.sequence(actions))
-    }
-    
-    private func pauseGame() {
-        view?.isPaused = true
-        view?.addSubview(PauseView())
     }
 }

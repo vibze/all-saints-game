@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     let scene = GameScene(size: UIScreen.main.bounds.size)
+    let pauseView = PauseView.fromXib
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,10 @@ class GameViewController: UIViewController {
     
     
     @IBAction func pauseTapped(_ sender: UIButton) {
+        pauseView.delegate = self
         scene.state = .pause
+        scene.view?.isPaused = true
+        view.addSubview(pauseView)
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -45,5 +49,7 @@ class GameViewController: UIViewController {
 extension GameViewController: PauseViewDelegate {
     func continueButtonPressed(_ pauseView: PauseView) {
         scene.state = .play
+        scene.view?.isPaused = false
+        pauseView.removeFromSuperview()
     }
 }

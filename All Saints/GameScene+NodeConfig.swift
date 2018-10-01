@@ -43,29 +43,6 @@ extension GameScene {
         }
     }
     
-    func createWall() -> SKSpriteNode {
-        var textures = [SKTexture]()
-        textures.append(SKTexture(image: #imageLiteral(resourceName: "milk")))
-        textures.append(SKTexture(image: #imageLiteral(resourceName: "beer")))
-        let rand = Int(arc4random_uniform(UInt32(textures.count)))
-        let texture = textures[rand] as SKTexture
-        
-        let   wall = SKSpriteNode(texture: texture)
-        wall.name = "wall"
-        wall.position = CGPoint(x: 0, y: screenHeight / 0.78)
-        wall.zPosition = 1
-        wall.size = CGSize(width: 80, height: 80)
-        wall.physicsBody?.isDynamic = false
-        wall.physicsBody = SKPhysicsBody(circleOfRadius: screenHeight / 33.35)
-//        wall.physicsBody?.categoryBitMask = bitMask.wall
-        wall.physicsBody?.collisionBitMask = 0
-        
-//        let rotate = SKAction.rotate(byAngle: .pi / 4, duration: 1)
-//        let foreverRotate = SKAction.repeatForever(rotate)
-//        wall.run(foreverRotate)
-        return wall
-    }
-    
     func addMovement(wall :SKSpriteNode){
         if state == .play{
             var actionArray = [SKAction]()
