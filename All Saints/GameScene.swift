@@ -51,12 +51,13 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         backgroundColor = #colorLiteral(red: 0.1098039216, green: 0.1607843137, blue: 0.06274509804, alpha: 1)
         setupWorldPhysics()
         moveBackground()
-        if let url = Bundle.main.url(forResource: "gulp-1.mp3", withExtension: "mp3") {
-            crashMusic = SKAudioNode(url: url)
-            addChild(crashMusic)
+
+        if let url = Bundle.main.url(forResource: "gulp-1", withExtension: "mp3") {
+//            crashMusic = SKAudioNode(url: url)
+//            addChild(crashMusic)
         }
         
-        if let url = Bundle.main.url(forResource: "soundtrack.mp3", withExtension: "mp3") {
+        if let url = Bundle.main.url(forResource: "soundtrack", withExtension: "mp3") {
             backgroundMusic = SKAudioNode(url: url)
             addChild(backgroundMusic)
         }
