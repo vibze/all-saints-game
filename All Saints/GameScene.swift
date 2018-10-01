@@ -35,10 +35,6 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     var counterStartValue = 60
     
     // Touch handling
-    var location = CGPoint.zero
-    var entryX: CGFloat = 0
-    var lock = false
-    var playerEmitter = SKEmitterNode()
     var i: Float = 5
     var backgroundMusic = SKAudioNode()
     var crashMusic = SKAudioNode()
@@ -127,34 +123,35 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         if contact.bodyA.node?.name == "player" { state = .end }
     }
     
+    
+    var shipInitialX: CGFloat = 0
+    var touchInitialX: CGFloat = 0
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if state == .tutorial {
             state = .play
             return
         }
-//
-//        guard let touch = touches.first else { return }
-//        let location = touch.location(in: self)
-//        let node = self.atPoint(location)
+        
+        guard let touch = touches.first else { return }
+        shipInitialX = ship.position.x
+        touchInitialX = touch.location(in: self).x
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            location = touch.location(in: self)
-            if !lock {
-                entryX = location.x
-                lock = true
-            }
-            let dX = abs(Int32(abs(Int32(location.x)) - abs(Int32(entryX))))
-            if dX > 1 {
-                ship.position.x = location.x
-            }
-        }
+        guard let touch = touches.first else { return }
+        
+        let translation = touchInitialX - touch.location(in: self).x
+        var x = shipInitialX - translation
+        x = max(ship.size.width/2, x)
+        x = min(frame.width - ship.size.width/2, x)
+
+        ship.position.x = x
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        lock = false
-        entryX = 0.0
+        shipInitialX = 0
+        touchInitialX = 0
     }
     
     // MARK: - States
