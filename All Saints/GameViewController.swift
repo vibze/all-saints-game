@@ -42,6 +42,9 @@ class GameViewController: UIViewController {
     }
     
     @objc private func decrementCounter() {
+        if counter == 0 {
+            performSegue(withIdentifier: "showResult", sender: self)
+        }
         counter -= 1
         scene.spawnBeer()
         scene.beerSpeed -= 0.05

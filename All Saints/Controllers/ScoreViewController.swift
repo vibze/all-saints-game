@@ -11,5 +11,6 @@ import UIKit
 class ScoreViewController: UIViewController {
     @IBAction func didTapDoneButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "unwindToHomePage", sender: self)
     }
 }

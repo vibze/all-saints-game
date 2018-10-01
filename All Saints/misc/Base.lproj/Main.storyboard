@@ -127,6 +127,7 @@
                         <outlet property="scoreLabel" destination="QSJ-xZ-IxK" id="CBW-Ht-BH5"/>
                         <outlet property="skView" destination="OyS-gQ-vbn" id="TpG-Yd-dLe"/>
                         <outlet property="timerLabel" destination="noU-hq-7TH" id="4c4-sa-KDE"/>
+                        <segue destination="I76-s9-dTR" kind="show" identifier="showResult" id="SVH-H1-0VH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nv4-ti-HYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,8 +163,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzO-cU-qMD" userLabel="StartButton" customClass="ActionButton" customModule="All_Saints" customModuleProvider="target">
-                                <rect key="frame" x="87" y="539" width="200" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzO-cU-qMD" userLabel="StartButton" customClass="ActionButton" customModule="All_Saints" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="539" width="200" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="9IC-KK-kge"/>
                                     <constraint firstAttribute="width" constant="200" id="ZJR-4f-OYS"/>
@@ -188,13 +189,18 @@
                             <constraint firstItem="end-7r-3xF" firstAttribute="top" secondItem="Wmo-oA-J4f" secondAttribute="bottom" constant="10" id="gcx-aW-FgS"/>
                             <constraint firstItem="Wmo-oA-J4f" firstAttribute="centerX" secondItem="NxJ-Lq-Q1m" secondAttribute="centerX" id="kop-Js-nV6"/>
                             <constraint firstItem="end-7r-3xF" firstAttribute="leading" secondItem="HzJ-r8-AHP" secondAttribute="leading" constant="30" id="qf3-4n-SLa"/>
+                            <constraint firstItem="dzO-cU-qMD" firstAttribute="centerX" secondItem="WKK-Qh-SKx" secondAttribute="centerX" id="qn2-RN-t7d"/>
                             <constraint firstItem="HzJ-r8-AHP" firstAttribute="trailing" secondItem="WKK-Qh-SKx" secondAttribute="trailing" id="qvr-6T-USi"/>
                             <constraint firstItem="WKK-Qh-SKx" firstAttribute="leading" secondItem="HzJ-r8-AHP" secondAttribute="leading" id="unK-v1-S0f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HzJ-r8-AHP"/>
                     </view>
+                    <connections>
+                        <segue destination="tnm-Ye-VRP" kind="unwind" identifier="unwindToHomePage" unwindAction="unwindToHomePageWithSegue:" id="Nne-1k-pWE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Y2-3x-Ne6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tnm-Ye-VRP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1426" y="26"/>
         </scene>
@@ -202,6 +208,6 @@
     <resources>
         <image name="MenuBackground" width="375" height="812"/>
         <image name="MenuLogo" width="200" height="200"/>
-        <image name="pause" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="pause" width="128" height="128"/>
     </resources>
 </document>
