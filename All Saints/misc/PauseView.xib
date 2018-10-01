@@ -76,12 +76,11 @@
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="continueButton" destination="lkY-wo-J3F" id="pr0-T4-kix"/>
             </connections>
-            <point key="canvasLocation" x="53.600000000000001" y="55.322338830584712"/>
+            <point key="canvasLocation" x="53.600000000000001" y="162.3688155922039"/>
         </view>
     </objects>
     <resources>

@@ -18,6 +18,31 @@ class GameViewController: UIViewController {
     let scene = GameScene(size: UIScreen.main.bounds.size)
     let pauseView = PauseView.fromXib
     
+    //MARK: Counter
+    var counter = 60 {
+        didSet {
+            timerLabel.text = "\(counter)"
+        }
+    }
+    var counterTimer = Timer()
+    var didPause = false {
+        didSet {
+            startStopCounter()
+        }
+    }
+    func startStopCounter() {
+        if !didPause {
+            counterTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementCounter), userInfo: nil, repeats: true)
+            return
+        }
+        
+        counterTimer.invalidate()
+    }
+    
+    @objc private func decrementCounter() {
+        counter -= 1
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,12 +50,14 @@ class GameViewController: UIViewController {
         skView.showsPhysics = true //false
         skView.backgroundColor = .clear
         
+        scene.sceneDelegate = self
         scene.scaleMode = .aspectFill
         skView.presentScene(scene)
+        startStopCounter()
     }
     
-    
     @IBAction func pauseTapped(_ sender: UIButton) {
+        didPause = true
         pauseView.delegate = self
         scene.state = .pause
         scene.view?.isPaused = true
@@ -48,8 +75,15 @@ class GameViewController: UIViewController {
 
 extension GameViewController: PauseViewDelegate {
     func continueButtonPressed(_ pauseView: PauseView) {
+        didPause = false
         scene.state = .play
         scene.view?.isPaused = false
         pauseView.removeFromSuperview()
+    }
+}
+
+extension GameViewController: GameSceneDelegate {
+    func gameScene(_ gameScene: GameScene, scoreDidChange score: Int) {
+        scoreLabel.text = "Выпил: \(score)"
     }
 }

@@ -9,6 +9,9 @@
 import SpriteKit
 import GameplayKit
 
+protocol GameSceneDelegate: class {
+    func gameScene(_ gameScene: GameScene, scoreDidChange score: Int)
+}
 
 class GameScene: SKScene,SKPhysicsContactDelegate {
     
@@ -18,17 +21,13 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         }
     }
     
-    var score = 0
+    weak var sceneDelegate: GameSceneDelegate?
     
     let ship = Ship.construct()
     
     var background: SKSpriteNode!
     var boomEmitter:SKEmitterNode!
     var swipeSprite: SKSpriteNode!
-    //MARK: Counter
-    var counter = 0
-    var counterTimer = Timer()
-    var counterStartValue = 60
     
     // Touch handling
     var i: Float = 5
@@ -56,16 +55,8 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         
         state = .tutorial
         
-        counter = counterStartValue
-        startCounter()
-    }
-    
-    private func startCounter() {
-        counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(decrementCounter), userInfo: nil, repeats: true)
-    }
-    
-    @objc private func decrementCounter(value: Int = 1) {
-        counter -= value
+//        counter = counterStartValue
+//        startCounter()
     }
     
     // MARK: - Scene ovrrided methods
@@ -150,6 +141,13 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
 //            scoreLabel.text = "\(score)"
 //            addRandom()
 //        }
+    }
+    
+    //MARK: Score
+    var score = 0 {
+        didSet {
+            sceneDelegate?.gameScene(self, scoreDidChange: score)
+        }
     }
     
     func spawnBeer() {

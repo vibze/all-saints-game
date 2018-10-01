@@ -16,7 +16,6 @@
 		845F638C215D009E008BF838 /* GameScene+NodeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F638B215D009E008BF838 /* GameScene+NodeConfig.swift */; };
 		845F6392215D0105008BF838 /* shine.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6390215D0105008BF838 /* shine.sks */; };
 		845F6393215D0105008BF838 /* spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6391215D0105008BF838 /* spark.sks */; };
-		845F6396215D010E008BF838 /* DJVI-Back On Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */; };
 		845F6397215D010E008BF838 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6395215D010E008BF838 /* MyParticle.sks */; };
 		845F639A215DD033008BF838 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6399215DD033008BF838 /* Ship.swift */; };
 		845F639F215E2667008BF838 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F639E215E2667008BF838 /* HomeViewController.swift */; };
@@ -47,7 +46,6 @@
 		845F638B215D009E008BF838 /* GameScene+NodeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+NodeConfig.swift"; sourceTree = "<group>"; };
 		845F6390215D0105008BF838 /* shine.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = shine.sks; sourceTree = "<group>"; };
 		845F6391215D0105008BF838 /* spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = spark.sks; sourceTree = "<group>"; };
-		845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "DJVI-Back On Track.mp3"; sourceTree = "<group>"; };
 		845F6395215D010E008BF838 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		845F6399215DD033008BF838 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		845F639E215E2667008BF838 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 				845F63BF215E61BA008BF838 /* Assets.xcassets */,
 				845F6391215D0105008BF838 /* spark.sks */,
 				845F6390215D0105008BF838 /* shine.sks */,
-				845F6394215D010E008BF838 /* DJVI-Back On Track.mp3 */,
 				845F6395215D010E008BF838 /* MyParticle.sks */,
 			);
 			path = Media;
@@ -234,7 +231,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				845F6393215D0105008BF838 /* spark.sks in Resources */,
-				845F6396215D010E008BF838 /* DJVI-Back On Track.mp3 in Resources */,
 				845F63AB215E3E17008BF838 /* LaunchScreen.storyboard in Resources */,
 				18BF06592161DE7C00412B61 /* PauseView.xib in Resources */,
 				845F63AD215E3E17008BF838 /* GameScene.sks in Resources */,
