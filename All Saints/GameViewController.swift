@@ -30,7 +30,8 @@ class GameViewController: UIViewController {
             startStopCounter()
         }
     }
-    func startStopCounter() {
+    
+    private func startStopCounter() {
         if !didPause {
             counterTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementCounter), userInfo: nil, repeats: true)
             return
@@ -53,7 +54,6 @@ class GameViewController: UIViewController {
         scene.sceneDelegate = self
         scene.scaleMode = .aspectFill
         skView.presentScene(scene)
-        startStopCounter()
     }
     
     @IBAction func pauseTapped(_ sender: UIButton) {
@@ -83,6 +83,10 @@ extension GameViewController: PauseViewDelegate {
 }
 
 extension GameViewController: GameSceneDelegate {
+    func didStartGame(_ gameScene: GameScene) {
+        startStopCounter()
+    }
+    
     func gameScene(_ gameScene: GameScene, scoreDidChange score: Int) {
         scoreLabel.text = "Выпил: \(score)"
     }

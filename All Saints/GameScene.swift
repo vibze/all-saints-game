@@ -11,6 +11,7 @@ import GameplayKit
 
 protocol GameSceneDelegate: class {
     func gameScene(_ gameScene: GameScene, scoreDidChange score: Int)
+    func didStartGame(_ gameScene: GameScene)
 }
 
 class GameScene: SKScene,SKPhysicsContactDelegate {
@@ -86,6 +87,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if state == .tutorial {
             state = .play
+            sceneDelegate?.didStartGame(self)
             return
         }
         
