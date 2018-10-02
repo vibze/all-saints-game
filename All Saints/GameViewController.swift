@@ -116,7 +116,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         skView.ignoresSiblingOrder = true
-        skView.showsPhysics = true //false
+        skView.showsPhysics = false
         skView.backgroundColor = .clear
         
         scene.sceneDelegate = self
