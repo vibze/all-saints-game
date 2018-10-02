@@ -26,6 +26,9 @@ class LeaderboardPage: UIViewController {
                 }
             }
             self.topPlayers = players
+            self.topPlayers.sort(by: { (lPlayer, rPlayer) -> Bool in
+                lPlayer.score > rPlayer.score
+            })
             self.tableView.reloadData()
         }
     }

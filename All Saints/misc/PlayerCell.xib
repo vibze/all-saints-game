@@ -17,18 +17,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="player name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qyn-dw-9aM">
-                    <rect key="frame" x="24" y="26" width="143.5" height="28"/>
+                    <rect key="frame" x="24" y="26" width="250" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="250" id="0jN-lb-FY3"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
-                    <color key="textColor" red="0.33333333329999998" green="0.67843137249999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kv8-dZ-G4I">
-                    <rect key="frame" x="446.5" y="26" width="63.5" height="28"/>
+                    <rect key="frame" x="360" y="26" width="150" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="eu8-4U-60A"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
-                    <color key="textColor" red="0.33333333329999998" green="0.67843137249999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Qyn-dw-9aM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="3nf-a5-ri2"/>
                 <constraint firstItem="Kv8-dZ-G4I" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="56V-hG-WWr"/>
