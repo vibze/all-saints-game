@@ -64,8 +64,8 @@ class Ship: SKSpriteNode {
     }
     
     func photoTransform() {
-        let largeScale = SKAction.scale(to: 1.3, duration: 3)
-        let smallScale = SKAction.scale(to: 1.0, duration: 3)
+        let largeScale = SKAction.scale(to: 1.3, duration: 1)
+        let smallScale = SKAction.scale(to: 1.0, duration: 1)
 
         let largeRepeat = SKAction.repeat(largeScale, count: 1)
         let smallRepeat = SKAction.repeat(smallScale, count: 1)
