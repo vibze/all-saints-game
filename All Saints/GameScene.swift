@@ -73,6 +73,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         guard contact.bodyA.node?.name == "player" else {
             return
         }
+        ship.showBubbles()
         score += 1
         contact.bodyB.node?.removeFromParent()
         drinkMusic.run(SKAction.play())

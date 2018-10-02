@@ -15,9 +15,7 @@
 		845F6388215D0066008BF838 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6387215D0066008BF838 /* Constants.swift */; };
 		845F638A215D008B008BF838 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6389215D008B008BF838 /* GameState.swift */; };
 		845F638C215D009E008BF838 /* GameScene+NodeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F638B215D009E008BF838 /* GameScene+NodeConfig.swift */; };
-		845F6392215D0105008BF838 /* shine.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6390215D0105008BF838 /* shine.sks */; };
 		845F6393215D0105008BF838 /* spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6391215D0105008BF838 /* spark.sks */; };
-		845F6397215D010E008BF838 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845F6395215D010E008BF838 /* MyParticle.sks */; };
 		845F639A215DD033008BF838 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6399215DD033008BF838 /* Ship.swift */; };
 		845F639F215E2667008BF838 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F639E215E2667008BF838 /* HomeViewController.swift */; };
 		845F63A2215E2773008BF838 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63A1215E2773008BF838 /* ActionButton.swift */; };
@@ -33,6 +31,7 @@
 		845F63C0215E61BB008BF838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845F63BF215E61BA008BF838 /* Assets.xcassets */; };
 		845F63C22161F617008BF838 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F63C12161F615008BF838 /* PauseView.swift */; };
 		84C1DA282162159600025FE0 /* ScoreLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1DA272162159600025FE0 /* ScoreLabelView.swift */; };
+		8E36C7FF21632FA2005AE3C4 /* Bubble.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8E36C7FE21632FA2005AE3C4 /* Bubble.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,9 +45,7 @@
 		845F6387215D0066008BF838 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		845F6389215D008B008BF838 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		845F638B215D009E008BF838 /* GameScene+NodeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+NodeConfig.swift"; sourceTree = "<group>"; };
-		845F6390215D0105008BF838 /* shine.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = shine.sks; sourceTree = "<group>"; };
 		845F6391215D0105008BF838 /* spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = spark.sks; sourceTree = "<group>"; };
-		845F6395215D010E008BF838 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		845F6399215DD033008BF838 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		845F639E215E2667008BF838 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		845F63A1215E2773008BF838 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
@@ -64,6 +61,7 @@
 		845F63BF215E61BA008BF838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		845F63C12161F615008BF838 /* PauseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		84C1DA272162159600025FE0 /* ScoreLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLabelView.swift; sourceTree = "<group>"; };
+		8E36C7FE21632FA2005AE3C4 /* Bubble.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Bubble.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +118,7 @@
 			children = (
 				845F63BF215E61BA008BF838 /* Assets.xcassets */,
 				845F6391215D0105008BF838 /* spark.sks */,
-				845F6390215D0105008BF838 /* shine.sks */,
-				845F6395215D010E008BF838 /* MyParticle.sks */,
+				8E36C7FE21632FA2005AE3C4 /* Bubble.sks */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -239,10 +236,9 @@
 				845F63AB215E3E17008BF838 /* LaunchScreen.storyboard in Resources */,
 				841757412161F6A5007866AE /* PauseView.xib in Resources */,
 				845F63AD215E3E17008BF838 /* GameScene.sks in Resources */,
-				845F6392215D0105008BF838 /* shine.sks in Resources */,
 				845F63AC215E3E17008BF838 /* Main.storyboard in Resources */,
 				845F63AF215E3E17008BF838 /* Actions.sks in Resources */,
-				845F6397215D010E008BF838 /* MyParticle.sks in Resources */,
+				8E36C7FF21632FA2005AE3C4 /* Bubble.sks in Resources */,
 				845F63C0215E61BB008BF838 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

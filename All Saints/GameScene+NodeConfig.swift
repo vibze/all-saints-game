@@ -48,6 +48,7 @@ extension GameScene {
         swipeSprite.position = CGPoint(x: 0, y: 70)
         swipeSprite.isHidden = false
         swipeSprite.run(repeatForever)
+        swipeSprite.zPosition = 4
         addChild(swipeSprite)
     }
     
