@@ -42,7 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func presentLeaderBoardViewControler() {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Leaderboard") as! LeaderboardPage
+        switchRoot(viewController: vc)
     }
     
     private func switchRoot(viewController: UIViewController) {

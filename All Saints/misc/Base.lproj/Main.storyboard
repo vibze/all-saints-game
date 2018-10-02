@@ -58,8 +58,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQe-IA-0sm" userLabel="LeadersButton">
-                                <rect key="frame" x="80" y="527" width="200" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQe-IA-0sm" userLabel="LeadersButton">
+                                <rect key="frame" x="87.5" y="527" width="200" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="MYw-Kb-5JV"/>
                                     <constraint firstAttribute="width" constant="200" id="Ppj-bg-75L"/>
@@ -70,7 +70,6 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapLeadersButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Qoy-Wq-mLp"/>
-                                    <action selector="didTapStartButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="k3o-op-kn6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -258,7 +257,6 @@
                             <constraint firstAttribute="bottom" secondItem="WKK-Qh-SKx" secondAttribute="bottom" id="KFc-UZ-QUS"/>
                             <constraint firstItem="dzO-cU-qMD" firstAttribute="top" secondItem="jth-m2-2pY" secondAttribute="bottom" constant="15" id="Od0-Lb-0aT"/>
                             <constraint firstItem="Tkm-Yl-Aoz" firstAttribute="leading" secondItem="HzJ-r8-AHP" secondAttribute="leading" constant="30" id="WPp-sA-5qL"/>
-                            <constraint firstItem="nr6-W4-PRm" firstAttribute="bottom" secondItem="dzO-cU-qMD" secondAttribute="top" constant="-16" id="Wb1-Di-JdX"/>
                             <constraint firstItem="HzJ-r8-AHP" firstAttribute="bottom" secondItem="dzO-cU-qMD" secondAttribute="bottom" constant="80" id="cuK-8D-7dm"/>
                             <constraint firstItem="HzJ-r8-AHP" firstAttribute="trailing" secondItem="end-7r-3xF" secondAttribute="trailing" constant="50" id="daB-zr-9RV"/>
                             <constraint firstItem="end-7r-3xF" firstAttribute="top" secondItem="Wmo-oA-J4f" secondAttribute="bottom" constant="15" id="gcx-aW-FgS"/>
@@ -286,7 +284,7 @@
         <!--Leaderboard Page-->
         <scene sceneID="dgG-u6-iWE">
             <objects>
-                <viewController id="oX2-nc-ouX" customClass="LeaderboardPage" customModule="All_Saints" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Leaderboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oX2-nc-ouX" customClass="LeaderboardPage" customModule="All_Saints" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L1o-no-7zW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
