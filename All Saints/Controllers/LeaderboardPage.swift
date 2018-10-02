@@ -13,16 +13,19 @@ class LeaderboardPage: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var topPlayers = [Player]()
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTable()
-        
+        indicator.startAnimating()
+        indicator.hidesWhenStopped = true
         ref.observe(.value) { (snapshot) in
             var players = [Player]()
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
                     let player = Player(snapshot: snapshot) {
                     players.append(player)
+                    self.indicator.stopAnimating()
                 }
             }
             self.topPlayers = players
@@ -54,5 +57,4 @@ extension LeaderboardPage: UITableViewDelegate, UITableViewDataSource {
         cell.setupCell(player: topPlayers[indexPath.row])
         return cell
     }
-    
 }

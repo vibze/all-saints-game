@@ -308,6 +308,12 @@
                                     <action selector="tryButtonTapped:" destination="oX2-nc-ouX" eventType="touchUpInside" id="Mdu-t3-BBy"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="h2f-0b-k6u">
+                                <rect key="frame" x="24" y="323" width="327" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="dik-I1-uxH"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -316,8 +322,11 @@
                             <constraint firstItem="YHh-pi-4Ig" firstAttribute="bottom" secondItem="Cg7-UM-k1Q" secondAttribute="bottom" constant="24" id="E1O-sH-Ayq"/>
                             <constraint firstItem="YHh-pi-4Ig" firstAttribute="trailing" secondItem="Cg7-UM-k1Q" secondAttribute="trailing" constant="52" id="E2q-az-IWJ"/>
                             <constraint firstItem="weY-5u-q7z" firstAttribute="bottom" secondItem="Cg7-UM-k1Q" secondAttribute="top" constant="-8" id="Mbp-ce-5hF"/>
+                            <constraint firstItem="YHh-pi-4Ig" firstAttribute="trailing" secondItem="h2f-0b-k6u" secondAttribute="trailing" constant="24" id="N5i-rp-URb"/>
                             <constraint firstItem="weY-5u-q7z" firstAttribute="leading" secondItem="YHh-pi-4Ig" secondAttribute="leading" constant="24" id="Rfc-oM-bhw"/>
                             <constraint firstItem="YHh-pi-4Ig" firstAttribute="trailing" secondItem="weY-5u-q7z" secondAttribute="trailing" constant="24" id="Xur-8g-DXt"/>
+                            <constraint firstItem="h2f-0b-k6u" firstAttribute="top" secondItem="YHh-pi-4Ig" secondAttribute="top" constant="303" id="Yfc-HQ-HkW"/>
+                            <constraint firstItem="h2f-0b-k6u" firstAttribute="leading" secondItem="YHh-pi-4Ig" secondAttribute="leading" constant="24" id="boY-Qj-gA0"/>
                             <constraint firstItem="VTV-yH-Pt7" firstAttribute="bottom" secondItem="L1o-no-7zW" secondAttribute="bottom" id="fVH-lR-i5Q"/>
                             <constraint firstItem="VTV-yH-Pt7" firstAttribute="leading" secondItem="YHh-pi-4Ig" secondAttribute="leading" id="gi6-I0-aV3"/>
                             <constraint firstItem="VTV-yH-Pt7" firstAttribute="trailing" secondItem="YHh-pi-4Ig" secondAttribute="trailing" id="jt5-Rz-0GF"/>
@@ -326,6 +335,7 @@
                         <viewLayoutGuide key="safeArea" id="YHh-pi-4Ig"/>
                     </view>
                     <connections>
+                        <outlet property="indicator" destination="h2f-0b-k6u" id="Qnu-Wc-c5f"/>
                         <outlet property="tableView" destination="weY-5u-q7z" id="zcs-9k-V8d"/>
                     </connections>
                 </viewController>
