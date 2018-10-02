@@ -136,7 +136,6 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         case .gameOver:
             scene?.isPaused = true
         }
-        
     }
     
     //MARK: Score
@@ -160,15 +159,8 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     }
     
     func shipFly() {
-        let actions: [SKAction] = [
-            SKAction.moveTo(y: 200, duration: 3),
-            SKAction.moveTo(x: 100, duration: 3),
-            SKAction.moveTo(y: 500, duration: 3),
-            SKAction.moveTo(x: 200, duration: 3),
-            SKAction.moveTo(x: 300, duration: 3),
-            SKAction.moveTo(y: 900, duration: 3)
-        ]
-        ship.run(SKAction.sequence(actions))
+        let action = SKAction.moveTo(y: 900, duration: 15)
+        ship.run(action)
         ship.fastFly()
     }
 }
