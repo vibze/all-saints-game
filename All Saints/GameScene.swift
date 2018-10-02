@@ -9,6 +9,7 @@
 import SpriteKit
 import GameplayKit
 
+
 protocol GameSceneDelegate: class {
     func gameScene(_ gameScene: GameScene, scoreDidChange score: Int)
     func didStartGame(_ gameScene: GameScene)
@@ -40,7 +41,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     // Touch handling
     var i: Float = 5
     var backgroundMusic = SKAudioNode()
-    var crashMusic = SKAudioNode()
+    var drinkMusic = SKAudioNode()
 
     
     // MARK: - Did move to skVIew
@@ -53,10 +54,11 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         moveBackground()
 
         if let url = Bundle.main.url(forResource: "gulp-1", withExtension: "mp3") {
-//            crashMusic = SKAudioNode(url: url)
-//            addChild(crashMusic)
+            drinkMusic = SKAudioNode(url: url)
+            drinkMusic.autoplayLooped = false
+            addChild(drinkMusic)
         }
-        
+       
         if let url = Bundle.main.url(forResource: "soundtrack", withExtension: "mp3") {
             backgroundMusic = SKAudioNode(url: url)
             addChild(backgroundMusic)
@@ -68,10 +70,12 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         ship.ignite()
-        if contact.bodyA.node?.name == "player" {
-            score += 1
-            contact.bodyB.node?.removeFromParent()
+        guard contact.bodyA.node?.name == "player" else {
+            return
         }
+        score += 1
+        contact.bodyB.node?.removeFromParent()
+        drinkMusic.run(SKAction.play())
     }
     
     var shipInitialX: CGFloat = 0
@@ -111,18 +115,21 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         switch state {
         case .tutorial:
             addTutorial()
+            drinkMusic.run(SKAction.stop())
         case .play:
             if Model.sharedInstance.sound == true {
                 backgroundMusic.run(SKAction.play())
+                drinkMusic.run(SKAction.stop())
             }
             ship.ignite()
             removeTutorial()
         case .pause:
             backgroundMusic.run(SKAction.pause())
+            drinkMusic.run(SKAction.pause())
         case .end:
-            //pause()
-            //ship.size = CGSize(width: ship.size.width*1.5, height: ship.size.height*1.5)
-            //backgroundMusic.run(SKAction.pause())
+            scene?.isPaused = true
+            backgroundMusic.run(SKAction.stop())
+            drinkMusic.run(SKAction.stop())
             break
         }
     }
