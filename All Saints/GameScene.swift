@@ -77,7 +77,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         ship.showBubbles()
         score += 1
         contact.bodyB.node?.removeFromParent()
-        
+        ship.photoTransform()
         if Model.sharedInstance.sound {
             drinkMusic.run(SKAction.play())
         }
