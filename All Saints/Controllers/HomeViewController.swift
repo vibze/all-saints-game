@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func didTapStartButton(_ sender: Any) {
-        
+        AppDelegate.shared.presentGameViewController()
     }
     
     @IBAction func unwindToHomePage(segue: UIStoryboardSegue) {
