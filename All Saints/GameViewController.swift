@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: ScoreLabelView!
     
+    var isPaused = false
     var beersSpawned: Int = 0
     var totalScore = 0 {
         didSet {
@@ -79,21 +80,14 @@ class GameViewController: UIViewController {
         }
     }
     
-    var didPause = false {
-        didSet {
-            startStopCounter()
-        }
-    }
-    
     private func startStopCounter() {
-        if !didPause {
-            roundTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementCounter), userInfo: nil, repeats: true)
-            return
-        }
         roundTimer?.invalidate()
+        roundTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementCounter), userInfo: nil, repeats: true)
     }
     
     @objc private func decrementCounter() {
+        guard !isPaused else { return }
+        
         if counter >= 1 {
             counter -= 1
         } else {
@@ -104,6 +98,8 @@ class GameViewController: UIViewController {
     }
     
     @objc private func spawnBeer() {
+        guard !isPaused else { return }
+        
         beersSpawned += 1
         scene.spawnBeer()
     }
@@ -141,7 +137,7 @@ class GameViewController: UIViewController {
     }
     
     fileprivate func pause() {
-        didPause = true
+        isPaused = true
         pauseView.delegate = self
         scene.state = .pause
         scene.view?.isPaused = true
@@ -158,7 +154,7 @@ class GameViewController: UIViewController {
             self.pauseView.alpha = 0
         }) { result in
             self.pauseView.removeFromSuperview()
-            self.didPause = false
+            self.isPaused = false
             self.scene.state = .play
             self.scene.view?.isPaused = false
         }

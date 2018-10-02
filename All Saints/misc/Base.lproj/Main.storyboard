@@ -46,26 +46,45 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k7U-IR-Soa">
+                                <rect key="frame" x="163" y="616" width="51" height="31"/>
+                                <connections>
+                                    <action selector="didChangeSoundToggle:" destination="BV1-FR-VrT" eventType="valueChanged" id="XHe-Ad-v59"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Звук" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxT-XJ-d5d">
+                                <rect key="frame" x="222" y="621.5" width="42" height="20"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wak-L8-AVg" firstAttribute="top" secondItem="VAC-3Z-Tga" secondAttribute="bottom" constant="20" id="5NR-pr-QP1"/>
                             <constraint firstItem="E6u-M3-pXy" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="7hd-0s-cMC"/>
+                            <constraint firstItem="QxT-XJ-d5d" firstAttribute="centerY" secondItem="k7U-IR-Soa" secondAttribute="centerY" id="8JW-KP-gBa"/>
                             <constraint firstItem="oKR-WI-OlE" firstAttribute="bottom" secondItem="3se-qz-xqx" secondAttribute="bottom" id="EAh-lH-ora"/>
                             <constraint firstItem="VAC-3Z-Tga" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="LcU-FL-8Rm"/>
                             <constraint firstItem="oKR-WI-OlE" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" id="Ub3-el-SUJ"/>
+                            <constraint firstItem="QxT-XJ-d5d" firstAttribute="leading" secondItem="k7U-IR-Soa" secondAttribute="trailing" constant="10" id="UrZ-0a-VxG"/>
                             <constraint firstItem="oKR-WI-OlE" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="XwE-Dl-Eid"/>
                             <constraint firstItem="VAC-3Z-Tga" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="Y8Q-Ho-8tv"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="E6u-M3-pXy" secondAttribute="bottom" constant="80" id="Z7u-t9-dOm"/>
                             <constraint firstItem="oKR-WI-OlE" firstAttribute="trailing" secondItem="4qk-I5-YsI" secondAttribute="trailing" id="roe-lU-Iwg"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="k7U-IR-Soa" secondAttribute="bottom" constant="20" id="u4L-W4-Tbl"/>
                             <constraint firstItem="wak-L8-AVg" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="uF9-eH-Lmd"/>
+                            <constraint firstItem="k7U-IR-Soa" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="v1N-OG-iLh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
+                    <connections>
+                        <outlet property="soundToggle" destination="k7U-IR-Soa" id="2Ff-wG-dvb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-44" y="26"/>
+            <point key="canvasLocation" x="-44" y="25.637181409295355"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="YBB-gP-TrU">
