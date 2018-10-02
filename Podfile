@@ -8,5 +8,4 @@ target 'All Saints' do
   # Pods for All Saints
   pod 'Firebase/Core'
   pod 'Firebase/Database'
-  pod 'SwiftyJSON'
 end
