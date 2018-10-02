@@ -65,7 +65,7 @@
                             <constraint firstItem="E6u-M3-pXy" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="7hd-0s-cMC"/>
                             <constraint firstItem="QxT-XJ-d5d" firstAttribute="centerY" secondItem="k7U-IR-Soa" secondAttribute="centerY" id="8JW-KP-gBa"/>
                             <constraint firstItem="oKR-WI-OlE" firstAttribute="bottom" secondItem="3se-qz-xqx" secondAttribute="bottom" id="EAh-lH-ora"/>
-                            <constraint firstItem="VAC-3Z-Tga" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="LcU-FL-8Rm"/>
+                            <constraint firstItem="VAC-3Z-Tga" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" constant="-150" id="LcU-FL-8Rm"/>
                             <constraint firstItem="oKR-WI-OlE" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" id="Ub3-el-SUJ"/>
                             <constraint firstItem="QxT-XJ-d5d" firstAttribute="leading" secondItem="k7U-IR-Soa" secondAttribute="trailing" constant="10" id="UrZ-0a-VxG"/>
                             <constraint firstItem="oKR-WI-OlE" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="XwE-Dl-Eid"/>
@@ -126,7 +126,7 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4o-KE-iue" userLabel="FaderView">
-                                <rect key="frame" x="85" y="0.0" width="240" height="337"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нарезался!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUN-c7-as6" userLabel="FinishLabel">
@@ -185,24 +185,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmo-oA-J4f" userLabel="ScoreLabel">
-                                <rect key="frame" x="129.5" y="287" width="116" height="93"/>
+                                <rect key="frame" x="129.5" y="107" width="116" height="93"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="80"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нарезался!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkm-Yl-Aoz" userLabel="TitleLabel">
-                                <rect key="frame" x="30" y="225" width="315" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Результат:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkm-Yl-Aoz" userLabel="TitleLabel">
+                                <rect key="frame" x="30" y="50" width="315" height="42"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="36"/>
                                 <color key="textColor" red="1" green="0.56450360496102425" blue="0.20064405648057038" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нарезался!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="end-7r-3xF" userLabel="DescLabel">
-                                <rect key="frame" x="30" y="390" width="315" height="23.5"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzO-cU-qMD" userLabel="StartButton" customClass="ActionButton" customModule="All_Saints" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzO-cU-qMD" userLabel="Submit" customClass="ActionButton" customModule="All_Saints" customModuleProvider="target">
                                 <rect key="frame" x="87.5" y="539" width="200" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="9IC-KK-kge"/>
@@ -214,22 +208,49 @@
                                     <action selector="didTapDoneButton:" destination="I76-s9-dTR" eventType="touchUpInside" id="Usd-ZW-5aT"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Твое имя" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jth-m2-2pY">
+                                <rect key="frame" x="87.5" y="476" width="200" height="48"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.2969552654109589" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="4Cp-j7-C2G"/>
+                                    <constraint firstAttribute="width" constant="200" id="ol3-cO-WSe"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Неплохо! Но завтра же на работу" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="end-7r-3xF" userLabel="DescLabel">
+                                <rect key="frame" x="20" y="212" width="335" height="24"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оставь след..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDe-V2-KaM" userLabel="DescLabel">
+                                <rect key="frame" x="119" y="437" width="137.5" height="24"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HzJ-r8-AHP" firstAttribute="trailing" secondItem="Tkm-Yl-Aoz" secondAttribute="trailing" constant="30" id="2XH-Sz-ry4"/>
-                            <constraint firstItem="Wmo-oA-J4f" firstAttribute="centerY" secondItem="NxJ-Lq-Q1m" secondAttribute="centerY" id="3U9-rw-YRy"/>
+                            <constraint firstItem="jth-m2-2pY" firstAttribute="centerX" secondItem="NxJ-Lq-Q1m" secondAttribute="centerX" id="5ib-pa-pgW"/>
                             <constraint firstItem="WKK-Qh-SKx" firstAttribute="top" secondItem="NxJ-Lq-Q1m" secondAttribute="top" id="DtO-rF-0Jh"/>
+                            <constraint firstItem="kDe-V2-KaM" firstAttribute="centerX" secondItem="NxJ-Lq-Q1m" secondAttribute="centerX" id="JBz-Xm-ILc"/>
                             <constraint firstAttribute="bottom" secondItem="WKK-Qh-SKx" secondAttribute="bottom" id="KFc-UZ-QUS"/>
-                            <constraint firstItem="Wmo-oA-J4f" firstAttribute="top" secondItem="Tkm-Yl-Aoz" secondAttribute="bottom" constant="20" id="MpN-Y1-VdD"/>
+                            <constraint firstItem="dzO-cU-qMD" firstAttribute="top" secondItem="jth-m2-2pY" secondAttribute="bottom" constant="15" id="Od0-Lb-0aT"/>
                             <constraint firstItem="Tkm-Yl-Aoz" firstAttribute="leading" secondItem="HzJ-r8-AHP" secondAttribute="leading" constant="30" id="WPp-sA-5qL"/>
                             <constraint firstItem="HzJ-r8-AHP" firstAttribute="bottom" secondItem="dzO-cU-qMD" secondAttribute="bottom" constant="80" id="cuK-8D-7dm"/>
-                            <constraint firstItem="HzJ-r8-AHP" firstAttribute="trailing" secondItem="end-7r-3xF" secondAttribute="trailing" constant="30" id="daB-zr-9RV"/>
-                            <constraint firstItem="end-7r-3xF" firstAttribute="top" secondItem="Wmo-oA-J4f" secondAttribute="bottom" constant="10" id="gcx-aW-FgS"/>
+                            <constraint firstItem="HzJ-r8-AHP" firstAttribute="trailing" secondItem="end-7r-3xF" secondAttribute="trailing" constant="50" id="daB-zr-9RV"/>
+                            <constraint firstItem="end-7r-3xF" firstAttribute="top" secondItem="Wmo-oA-J4f" secondAttribute="bottom" constant="15" id="gcx-aW-FgS"/>
+                            <constraint firstItem="Wmo-oA-J4f" firstAttribute="top" secondItem="Tkm-Yl-Aoz" secondAttribute="bottom" constant="15" id="ilg-ZS-SsR"/>
                             <constraint firstItem="Wmo-oA-J4f" firstAttribute="centerX" secondItem="NxJ-Lq-Q1m" secondAttribute="centerX" id="kop-Js-nV6"/>
-                            <constraint firstItem="end-7r-3xF" firstAttribute="leading" secondItem="HzJ-r8-AHP" secondAttribute="leading" constant="30" id="qf3-4n-SLa"/>
+                            <constraint firstItem="end-7r-3xF" firstAttribute="leading" secondItem="HzJ-r8-AHP" secondAttribute="leading" constant="50" id="qf3-4n-SLa"/>
                             <constraint firstItem="dzO-cU-qMD" firstAttribute="centerX" secondItem="WKK-Qh-SKx" secondAttribute="centerX" id="qn2-RN-t7d"/>
+                            <constraint firstItem="Tkm-Yl-Aoz" firstAttribute="top" secondItem="HzJ-r8-AHP" secondAttribute="top" constant="30" id="qsi-fM-Rw9"/>
                             <constraint firstItem="HzJ-r8-AHP" firstAttribute="trailing" secondItem="WKK-Qh-SKx" secondAttribute="trailing" id="qvr-6T-USi"/>
+                            <constraint firstItem="jth-m2-2pY" firstAttribute="top" secondItem="kDe-V2-KaM" secondAttribute="bottom" constant="15" id="sI9-xz-Skq"/>
                             <constraint firstItem="WKK-Qh-SKx" firstAttribute="leading" secondItem="HzJ-r8-AHP" secondAttribute="leading" id="unK-v1-S0f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HzJ-r8-AHP"/>
