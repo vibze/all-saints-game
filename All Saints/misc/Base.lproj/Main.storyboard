@@ -175,6 +175,20 @@
                                     <action selector="didTapDoneButton:" destination="I76-s9-dTR" eventType="touchUpInside" id="Usd-ZW-5aT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nr6-W4-PRm" customClass="ActionButton" customModule="All_Saints" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="475" width="200" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="F2B-H8-cDh"/>
+                                    <constraint firstAttribute="width" constant="200" id="hM4-OI-alm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Братва">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oX2-nc-ouX" kind="show" identifier="showLeaders" id="ylp-Zq-egN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -183,7 +197,9 @@
                             <constraint firstItem="WKK-Qh-SKx" firstAttribute="top" secondItem="NxJ-Lq-Q1m" secondAttribute="top" id="DtO-rF-0Jh"/>
                             <constraint firstAttribute="bottom" secondItem="WKK-Qh-SKx" secondAttribute="bottom" id="KFc-UZ-QUS"/>
                             <constraint firstItem="Wmo-oA-J4f" firstAttribute="top" secondItem="Tkm-Yl-Aoz" secondAttribute="bottom" constant="20" id="MpN-Y1-VdD"/>
+                            <constraint firstItem="nr6-W4-PRm" firstAttribute="centerX" secondItem="WKK-Qh-SKx" secondAttribute="centerX" id="TlF-lZ-xHf"/>
                             <constraint firstItem="Tkm-Yl-Aoz" firstAttribute="leading" secondItem="HzJ-r8-AHP" secondAttribute="leading" constant="30" id="WPp-sA-5qL"/>
+                            <constraint firstItem="nr6-W4-PRm" firstAttribute="bottom" secondItem="dzO-cU-qMD" secondAttribute="top" constant="-16" id="Wb1-Di-JdX"/>
                             <constraint firstItem="HzJ-r8-AHP" firstAttribute="bottom" secondItem="dzO-cU-qMD" secondAttribute="bottom" constant="80" id="cuK-8D-7dm"/>
                             <constraint firstItem="HzJ-r8-AHP" firstAttribute="trailing" secondItem="end-7r-3xF" secondAttribute="trailing" constant="30" id="daB-zr-9RV"/>
                             <constraint firstItem="end-7r-3xF" firstAttribute="top" secondItem="Wmo-oA-J4f" secondAttribute="bottom" constant="10" id="gcx-aW-FgS"/>
@@ -203,7 +219,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Y2-3x-Ne6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="tnm-Ye-VRP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1426" y="26"/>
+            <point key="canvasLocation" x="1424.8" y="25.637181409295355"/>
         </scene>
         <!--Leaderboard Page-->
         <scene sceneID="dgG-u6-iWE">
@@ -217,7 +233,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="weY-5u-q7z">
-                                <rect key="frame" x="24" y="84" width="327" height="583"/>
+                                <rect key="frame" x="24" y="44" width="327" height="543"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="playerCell" id="gX8-33-ekD">
@@ -256,17 +272,31 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cg7-UM-k1Q" customClass="ActionButton" customModule="All_Saints" customModuleProvider="target">
+                                <rect key="frame" x="52" y="595" width="271" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="pax-JV-8nR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                <state key="normal" title="Попробовать еще"/>
+                                <connections>
+                                    <action selector="tryButtonTapped:" destination="oX2-nc-ouX" eventType="touchUpInside" id="Mdu-t3-BBy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VTV-yH-Pt7" firstAttribute="top" secondItem="L1o-no-7zW" secondAttribute="top" id="2YP-6e-uVz"/>
+                            <constraint firstItem="Cg7-UM-k1Q" firstAttribute="leading" secondItem="YHh-pi-4Ig" secondAttribute="leading" constant="52" id="9jX-Fc-0hw"/>
+                            <constraint firstItem="YHh-pi-4Ig" firstAttribute="bottom" secondItem="Cg7-UM-k1Q" secondAttribute="bottom" constant="24" id="E1O-sH-Ayq"/>
+                            <constraint firstItem="YHh-pi-4Ig" firstAttribute="trailing" secondItem="Cg7-UM-k1Q" secondAttribute="trailing" constant="52" id="E2q-az-IWJ"/>
+                            <constraint firstItem="weY-5u-q7z" firstAttribute="bottom" secondItem="Cg7-UM-k1Q" secondAttribute="top" constant="-8" id="Mbp-ce-5hF"/>
                             <constraint firstItem="weY-5u-q7z" firstAttribute="leading" secondItem="YHh-pi-4Ig" secondAttribute="leading" constant="24" id="Rfc-oM-bhw"/>
                             <constraint firstItem="YHh-pi-4Ig" firstAttribute="trailing" secondItem="weY-5u-q7z" secondAttribute="trailing" constant="24" id="Xur-8g-DXt"/>
-                            <constraint firstItem="VTV-yH-Pt7" firstAttribute="bottom" secondItem="YHh-pi-4Ig" secondAttribute="bottom" id="fVH-lR-i5Q"/>
+                            <constraint firstItem="VTV-yH-Pt7" firstAttribute="bottom" secondItem="L1o-no-7zW" secondAttribute="bottom" id="fVH-lR-i5Q"/>
                             <constraint firstItem="VTV-yH-Pt7" firstAttribute="leading" secondItem="YHh-pi-4Ig" secondAttribute="leading" id="gi6-I0-aV3"/>
                             <constraint firstItem="VTV-yH-Pt7" firstAttribute="trailing" secondItem="YHh-pi-4Ig" secondAttribute="trailing" id="jt5-Rz-0GF"/>
-                            <constraint firstItem="weY-5u-q7z" firstAttribute="top" secondItem="YHh-pi-4Ig" secondAttribute="top" constant="64" id="nu6-RB-dtn"/>
-                            <constraint firstItem="YHh-pi-4Ig" firstAttribute="bottom" secondItem="weY-5u-q7z" secondAttribute="bottom" id="wpB-Qb-edf"/>
+                            <constraint firstItem="weY-5u-q7z" firstAttribute="top" secondItem="YHh-pi-4Ig" secondAttribute="top" constant="24" id="nu6-RB-dtn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YHh-pi-4Ig"/>
                     </view>

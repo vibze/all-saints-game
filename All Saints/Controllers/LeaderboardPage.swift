@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class LeaderboardPage: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    var ref = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,10 @@ class LeaderboardPage: UIViewController {
     
     private func setupTable() {
         tableView.register(PlayerCell.self, forCellReuseIdentifier: "playerCell")
+    }
+    
+    @IBAction func tryButtonTapped(_ sender: ActionButton) {
+        debugPrint("try button tapped")
     }
 }
 
