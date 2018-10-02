@@ -12,7 +12,7 @@ enum GameState {
     case tutorial, play, pause, end
 }
 
-class Model{
+class Model {
     
     static let sharedInstance = Model()
     var sound = true

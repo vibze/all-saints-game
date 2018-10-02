@@ -9,6 +9,7 @@
 import SpriteKit
 import GameplayKit
 
+
 protocol GameSceneDelegate: class {
     func gameScene(_ gameScene: GameScene, scoreDidChange score: Int)
     func didStartGame(_ gameScene: GameScene)
@@ -24,23 +25,24 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     weak var sceneDelegate: GameSceneDelegate?
     
+    var move = SKAction()
     let ship = Ship.construct()
     var beerSpeed = 3.5
-    var shipSpeed = 5.0
+    var shipSpeed = 5.0 {
+        didSet {
+
+        }
+    }
     
     var background: SKSpriteNode!
     var boomEmitter:SKEmitterNode!
     var swipeSprite: SKSpriteNode!
-    //MARK: Counter
-    var counter = 0
-    var counterTimer = Timer()
-    var counterStartValue = 60
-    
+
     // Touch handling
     var i: Float = 5
     var backgroundMusic = SKAudioNode()
-    var crashMusic = SKAudioNode()
-    
+    var drinkMusic = SKAudioNode()
+
     // MARK: - Did move to skVIew
     override func didMove(to view: SKView) {
         ship.position = CGPoint(x: view.frame.width/2, y: view.frame.width - ship.size.height - 40)
@@ -51,12 +53,15 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         moveBackground()
 
         if let url = Bundle.main.url(forResource: "gulp-1", withExtension: "mp3") {
-//            crashMusic = SKAudioNode(url: url)
-//            addChild(crashMusic)
+            drinkMusic = SKAudioNode(url: url)
+            drinkMusic.autoplayLooped = false
+            drinkMusic.run(SKAction.stop())
+            addChild(drinkMusic)
         }
-        
+       
         if let url = Bundle.main.url(forResource: "soundtrack", withExtension: "mp3") {
             backgroundMusic = SKAudioNode(url: url)
+            backgroundMusic.run(SKAction.stop())
             addChild(backgroundMusic)
         }
         
@@ -66,9 +71,14 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         ship.ignite()
-        if contact.bodyA.node?.name == "player" {
-            score += 1
-            contact.bodyB.node?.removeFromParent()
+        guard contact.bodyA.node?.name == "player" else {
+            return
+        }
+        score += 1
+        contact.bodyB.node?.removeFromParent()
+        
+        if Model.sharedInstance.sound {
+            drinkMusic.run(SKAction.play())
         }
     }
     
@@ -110,7 +120,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         case .tutorial:
             addTutorial()
         case .play:
-            if Model.sharedInstance.sound == true {
+            if Model.sharedInstance.sound {
                 backgroundMusic.run(SKAction.play())
             }
             ship.ignite()
@@ -118,9 +128,9 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         case .pause:
             backgroundMusic.run(SKAction.pause())
         case .end:
-            //pause()
-            //ship.size = CGSize(width: ship.size.width*1.5, height: ship.size.height*1.5)
-            //backgroundMusic.run(SKAction.pause())
+            scene?.isPaused = true
+            backgroundMusic.run(SKAction.stop())
+            drinkMusic.run(SKAction.stop())
             break
         }
     }

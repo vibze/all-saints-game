@@ -26,7 +26,7 @@ extension GameScene {
     }
     
     func moveBackground() {
-        let move = SKAction.moveBy(x: 0, y: -screenHeight, duration: shipSpeed)
+        move = SKAction.moveBy(x: 0, y: -screenHeight, duration: shipSpeed)
         let replace = SKAction.moveBy(x: 0, y: screenHeight, duration: 0)
         let moveForever = SKAction.repeatForever(SKAction.sequence([move,replace]))
         for i in 0...3 {
@@ -38,20 +38,8 @@ extension GameScene {
             addChild(background)
         }
     }
-    
-    func addMovement(wall :SKSpriteNode){
-        if state == .play{
-            var actionArray = [SKAction]()
-            actionArray.append(SKAction.move(to: CGPoint(x: wall.position.x, y: -wall.size.height), duration: TimeInterval(i)))
-            actionArray.append(SKAction.removeFromParent())
-            wall.run(SKAction.sequence(actionArray))
-        }
-        if i <= 0 {
-            state = .end
-        }
-    }
-    
-    func addTutorial(){
+
+    func addTutorial() {
         let toRight = SKAction.moveBy(x: screenWidth, y: 0, duration: 2.0)
         let toLeft = SKAction.moveBy(x: -screenWidth, y: 0, duration: 2.0)
         let repeatForever = SKAction.repeatForever(SKAction.sequence([toRight,toLeft]))
