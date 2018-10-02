@@ -12,7 +12,7 @@ import FirebaseDatabase
 class ScoreViewController: UIViewController {
     var beersSpawned: Int = 1
     var score: Int = 0
-    let ref = Database.database().reference()
+//    let ref = Database.database().reference()
     
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -20,14 +20,11 @@ class ScoreViewController: UIViewController {
         AppDelegate.shared.presentHomeViewController()
     }
     
-    
-    
     override func viewDidLoad() {
         let percent = Double(score)/Double(beersSpawned)*100
         scoreLabel.text = String(format: "%.2f", percent) + "%"
         let userId = UUID().uuidString
         let name = "viiiitya"
-        ref.child("players").child(userId).setValue(["name": name,
-                                                     "score": score])
+        FirebaseService.setNewScore(id: userId, name: name, score: percent)
     }
 }

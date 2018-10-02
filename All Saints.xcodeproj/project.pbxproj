@@ -12,6 +12,8 @@
 		189AD05521631AFF00B51333 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 189AD05421631AFF00B51333 /* GoogleService-Info.plist */; };
 		189AD05721631FF300B51333 /* LeaderboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AD05621631FF300B51333 /* LeaderboardPage.swift */; };
 		189AD059216322F200B51333 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AD058216322F200B51333 /* PlayerCell.swift */; };
+		18E7CEDB216343F500BB7CCF /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7CEDA216343F500BB7CCF /* FirebaseService.swift */; };
+		18E7CEDE21635FAB00BB7CCF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7CEDD21635FAB00BB7CCF /* Player.swift */; };
 		5CA759D6A28F0A1BBA2C4CA9 /* Pods_All_Saints.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E95D0FA47538150E6A3BFD2 /* Pods_All_Saints.framework */; };
 		8417573F2161F67F007866AE /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417573E2161F67F007866AE /* extensions.swift */; };
 		841757412161F6A5007866AE /* PauseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841757402161F6A5007866AE /* PauseView.xib */; };
@@ -44,6 +46,8 @@
 		189AD05421631AFF00B51333 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		189AD05621631FF300B51333 /* LeaderboardPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardPage.swift; sourceTree = "<group>"; };
 		189AD058216322F200B51333 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		18E7CEDA216343F500BB7CCF /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		18E7CEDD21635FAB00BB7CCF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5E95D0FA47538150E6A3BFD2 /* Pods_All_Saints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Saints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8417573E2161F67F007866AE /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		841757402161F6A5007866AE /* PauseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PauseView.xib; sourceTree = "<group>"; };
@@ -95,6 +99,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		18E7CED9216343DC00BB7CCF /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				18E7CEDA216343F500BB7CCF /* FirebaseService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		18E7CEDC21635F9E00BB7CCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18E7CEDD21635FAB00BB7CCF /* Player.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		337E11DD574B7BBDCE86053B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,9 +147,11 @@
 				1853D257216227AC00E80B37 /* soundtrack.mp3 */,
 				1853D255216227A400E80B37 /* gulp-1.mp3 */,
 				845F63BA215E5C66008BF838 /* Sounds */,
+				18E7CEDC21635F9E00BB7CCF /* Model */,
 				845F63A0215E275F008BF838 /* Views */,
 				845F639B215E262A008BF838 /* Controllers */,
 				845F6398215DD023008BF838 /* Nodes */,
+				18E7CED9216343DC00BB7CCF /* Networking */,
 				845F638D215D00D4008BF838 /* Media */,
 				845F63A3215E3E12008BF838 /* misc */,
 				845F6377215CFF87008BF838 /* GameViewController.swift */,
@@ -308,12 +330,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-All Saints/Pods-All Saints-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -333,6 +357,7 @@
 				845F63B9215E50B9008BF838 /* SKSpriteNode+aspectFill.swift in Sources */,
 				189AD05721631FF300B51333 /* LeaderboardPage.swift in Sources */,
 				845F63C22161F617008BF838 /* PauseView.swift in Sources */,
+				18E7CEDB216343F500BB7CCF /* FirebaseService.swift in Sources */,
 				8417573F2161F67F007866AE /* extensions.swift in Sources */,
 				845F6378215CFF87008BF838 /* GameViewController.swift in Sources */,
 				845F639F215E2667008BF838 /* HomeViewController.swift in Sources */,
@@ -344,6 +369,7 @@
 				845F639A215DD033008BF838 /* Ship.swift in Sources */,
 				189AD059216322F200B51333 /* PlayerCell.swift in Sources */,
 				845F63B5215E4385008BF838 /* ScoreViewController.swift in Sources */,
+				18E7CEDE21635FAB00BB7CCF /* Player.swift in Sources */,
 				845F63AE215E3E17008BF838 /* AppDelegate.swift in Sources */,
 				845F6388215D0066008BF838 /* Constants.swift in Sources */,
 			);

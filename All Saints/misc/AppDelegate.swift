@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "Score") as! ScoreViewController
         vc.beersSpawned = beersSpawned
-        vc.score = beersSpawned
+        vc.score = beersDrank
         switchRoot(viewController: vc)
     }
     
