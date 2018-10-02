@@ -29,6 +29,11 @@ class Ship: SKSpriteNode {
         ship.burnerEmitter.isHidden = true
         ship.addChild(ship.burnerEmitter)
         
+        ship.bubbleEmitter.position = CGPoint(x: 0, y: 90)
+        ship.bubbleEmitter.isHidden = true
+        ship.bubbleEmitter.zPosition = 1
+        ship.addChild(ship.bubbleEmitter)
+        
         ship.addChild(ship.photoNode)
         ship.photoNode.size = CGSize(width: 50, height: 50)
         ship.photoNode.position = CGPoint(x: 0, y: 15)
@@ -39,15 +44,28 @@ class Ship: SKSpriteNode {
     
     let burnerEmitter = SKEmitterNode(fileNamed: "spark.sks")!
     let photoNode = SKSpriteNode()
-    
+    let bubbleEmitter = SKEmitterNode(fileNamed: "Bubble.sks")!
     
     func ignite() {
         burnerEmitter.isHidden = false
+    }
+    
+    func showBubbles() {
+        bubbleEmitter.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.bubbleEmitter.isHidden = true
+        }
     }
 
     func setRandomPhoto() {
         let i = Int.random(in: 1 ... 7)
         photoNode.texture = SKTexture(imageNamed: "lex-\(i)")
         photoNode.zPosition = 1
+        
+        let largeScale = SKAction.scale(to: 1.3, duration: 4)
+        let smallScale = SKAction.scale(to: 1.0, duration: 4)
+        let repeatForever = SKAction.repeatForever(SKAction.sequence([largeScale, smallScale]))
+
+        photoNode.run(repeatForever)
     }
 }
