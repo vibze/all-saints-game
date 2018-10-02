@@ -20,5 +20,21 @@ class ScoreViewController: UIViewController {
     
     override func viewDidLoad() {
         scoreLabel.text = "\(Int(Double(score)/Double(beersSpawned)*100))%"
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        if self.view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= 200
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y += 200
+        }
     }
 }
