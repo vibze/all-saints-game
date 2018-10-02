@@ -15,6 +15,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: ScoreLabelView!
+    @IBOutlet weak var faderView: UIView!
+    @IBOutlet weak var finishLabel: UILabel!
     
     var isPaused = false
     var beersSpawned: Int = 0
@@ -28,7 +30,7 @@ class GameViewController: UIViewController {
     let pauseView = PauseView.fromXib
     
     //MARK: Counter
-    var counter = 30 {
+    var counter = 5 {
         didSet {
             guard counter >= 0 else {
                 return
@@ -91,9 +93,7 @@ class GameViewController: UIViewController {
         if counter >= 1 {
             counter -= 1
         } else {
-            roundTimer?.invalidate()
-            scene.state = .end
-            AppDelegate.shared.presentScoreViewController(beersSpawned: beersSpawned, beersDrank: totalScore)
+            finish()
         }
     }
     
@@ -149,6 +149,32 @@ class GameViewController: UIViewController {
             self.isPaused = false
             self.scene.state = .play
             self.scene.view?.isPaused = false
+        }
+    }
+    
+    fileprivate func finish() {
+        scene.state = .end
+        beerTimer?.invalidate()
+        roundTimer?.invalidate()
+        
+        finishLabel.isHidden = false
+        finishLabel.alpha = 0
+        finishLabel.transform = CGAffineTransform(scaleX: 5, y: 5)
+        faderView.isHidden = false
+        faderView.alpha = 0
+        faderView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        
+        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseInOut, animations: {
+            self.finishLabel.alpha = 1
+            self.finishLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.faderView.alpha = 1
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            AppDelegate.shared.presentScoreViewController(beersSpawned: self.beersSpawned, beersDrank: self.totalScore)
         }
     }
 }

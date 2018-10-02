@@ -125,23 +125,44 @@
                                     <constraint firstAttribute="height" constant="30" id="9cd-nc-PLt"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4o-KE-iue" userLabel="FaderView">
+                                <rect key="frame" x="85" y="0.0" width="240" height="337"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нарезался!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUN-c7-as6" userLabel="FinishLabel">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="36"/>
+                                <color key="textColor" red="1" green="0.56450360499999996" blue="0.2006440565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QSJ-xZ-IxK" firstAttribute="top" secondItem="dAu-7s-YVb" secondAttribute="top" id="49R-bb-E4k"/>
+                            <constraint firstItem="mUN-c7-as6" firstAttribute="top" secondItem="tUx-ff-hRD" secondAttribute="top" id="4wW-kf-GQE"/>
                             <constraint firstItem="OyS-gQ-vbn" firstAttribute="leading" secondItem="dAu-7s-YVb" secondAttribute="leading" id="AQo-ig-DQq"/>
                             <constraint firstItem="QSJ-xZ-IxK" firstAttribute="leading" secondItem="dAu-7s-YVb" secondAttribute="leading" constant="20" id="KpO-Ft-1eH"/>
                             <constraint firstItem="OyS-gQ-vbn" firstAttribute="trailing" secondItem="dAu-7s-YVb" secondAttribute="trailing" id="Qtq-S0-hcS"/>
+                            <constraint firstItem="b4o-KE-iue" firstAttribute="leading" secondItem="dAu-7s-YVb" secondAttribute="leading" id="TAQ-kI-qb3"/>
+                            <constraint firstItem="mUN-c7-as6" firstAttribute="trailing" secondItem="dAu-7s-YVb" secondAttribute="trailing" id="ZTa-n9-Htv"/>
                             <constraint firstItem="noU-hq-7TH" firstAttribute="trailing" secondItem="OUP-Sb-5PU" secondAttribute="leading" constant="-16" id="f88-ae-eTk"/>
                             <constraint firstItem="OUP-Sb-5PU" firstAttribute="top" secondItem="dAu-7s-YVb" secondAttribute="top" id="gmd-vq-V5Y"/>
+                            <constraint firstItem="mUN-c7-as6" firstAttribute="bottom" secondItem="tUx-ff-hRD" secondAttribute="bottom" id="jGg-Ek-0F1"/>
+                            <constraint firstAttribute="bottom" secondItem="b4o-KE-iue" secondAttribute="bottom" id="jfn-gx-9t6"/>
                             <constraint firstItem="OyS-gQ-vbn" firstAttribute="top" secondItem="tUx-ff-hRD" secondAttribute="top" id="k8S-dz-qDs"/>
+                            <constraint firstItem="dAu-7s-YVb" firstAttribute="trailing" secondItem="b4o-KE-iue" secondAttribute="trailing" id="nTH-6R-aU2"/>
+                            <constraint firstItem="mUN-c7-as6" firstAttribute="leading" secondItem="dAu-7s-YVb" secondAttribute="leading" id="qBy-Wp-Gs8"/>
                             <constraint firstItem="noU-hq-7TH" firstAttribute="top" secondItem="dAu-7s-YVb" secondAttribute="top" id="sMv-0A-NFs"/>
+                            <constraint firstItem="b4o-KE-iue" firstAttribute="top" secondItem="tUx-ff-hRD" secondAttribute="top" id="thO-5g-m3I"/>
                             <constraint firstItem="dAu-7s-YVb" firstAttribute="trailing" secondItem="OUP-Sb-5PU" secondAttribute="trailing" constant="8" id="ykR-2I-GDk"/>
                             <constraint firstItem="OyS-gQ-vbn" firstAttribute="bottom" secondItem="tUx-ff-hRD" secondAttribute="bottom" id="zds-lQ-mgv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dAu-7s-YVb"/>
                     </view>
                     <connections>
+                        <outlet property="faderView" destination="b4o-KE-iue" id="0p0-4G-eeb"/>
+                        <outlet property="finishLabel" destination="mUN-c7-as6" id="5CN-GH-3K6"/>
                         <outlet property="pauseButton" destination="OUP-Sb-5PU" id="Hn3-bL-mMu"/>
                         <outlet property="scoreLabel" destination="QSJ-xZ-IxK" id="CBW-Ht-BH5"/>
                         <outlet property="skView" destination="OyS-gQ-vbn" id="TpG-Yd-dLe"/>
