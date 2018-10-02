@@ -21,8 +21,8 @@ class HomeViewController: UIViewController {
         AppDelegate.shared.presentGameViewController()
     }
     
-    @IBAction func unwindToHomePage(segue: UIStoryboardSegue) {
-        
+    @IBAction func didTapLeadersButton(_ sender: Any) {
+        AppDelegate.shared.presentLeaderBoardViewControler()
     }
     
     override func viewDidLoad() {

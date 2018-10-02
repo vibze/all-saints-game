@@ -21,6 +21,18 @@ import UIKit
     let backgroundLayer = CALayer()
     let etchLayer = CALayer()
     
+    override var isHighlighted: Bool {
+        didSet {
+            if isHighlighted {
+                transform = CGAffineTransform(translationX: 0, y: 3)
+                backgroundLayer.backgroundColor = UIColor(hue: 0, saturation: 0, brightness: 0.57, alpha: 1).cgColor
+            } else {
+                transform = CGAffineTransform(translationX: 0, y: 0)
+                backgroundLayer.backgroundColor = UIColor(hue: 0, saturation: 0, brightness: 0.47, alpha: 1).cgColor
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
