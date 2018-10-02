@@ -15,6 +15,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: ScoreLabelView!
+    
+    var beersSpawned: Int = 0
     var totalScore = 0 {
         didSet {
             scoreLabel.score = totalScore
@@ -25,7 +27,7 @@ class GameViewController: UIViewController {
     let pauseView = PauseView.fromXib
     
     //MARK: Counter
-    var counter = 60 {
+    var counter = 30 {
         didSet {
             guard counter >= 0 else {
                 return
@@ -33,7 +35,50 @@ class GameViewController: UIViewController {
             timerLabel.text = "\(counter)"
         }
     }
-    var counterTimer = Timer()
+    
+    var roundTimer: Timer?
+    var beerTimer: Timer?
+    var difficultyLevel: Int = 0 {
+        didSet {
+            beerTimer?.invalidate()
+            switch difficultyLevel {
+            case 0:
+                scene.beerSpeed = 3
+                beerTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(spawnBeer), userInfo: nil, repeats: true)
+            case 1:
+                scene.beerSpeed = 2.5
+                beerTimer = Timer.scheduledTimer(timeInterval: 0.7, target: self, selector: #selector(spawnBeer), userInfo: nil, repeats: true)
+            case 2:
+                scene.beerSpeed = 2.5
+                beerTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(spawnBeer), userInfo: nil, repeats: true)
+            case 3:
+                scene.beerSpeed = 2
+                beerTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(spawnBeer), userInfo: nil, repeats: true)
+            case 4:
+                scene.beerSpeed = 2
+                beerTimer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(spawnBeer), userInfo: nil, repeats: true)
+            case 5:
+                scene.beerSpeed = 1.5
+                beerTimer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(spawnBeer), userInfo: nil, repeats: true)
+            case 6:
+                scene.beerSpeed = 1.5
+                beerTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(spawnBeer), userInfo: nil, repeats: true)
+            case 7:
+                scene.beerSpeed = 1
+                beerTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(spawnBeer), userInfo: nil, repeats: true)
+            case 8:
+                scene.beerSpeed = 1
+                beerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(spawnBeer), userInfo: nil, repeats: true)
+            case 9:
+                scene.beerSpeed = 0.7
+                beerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(spawnBeer), userInfo: nil, repeats: true)
+            default:
+                scene.beerSpeed = 0.4
+                beerTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(spawnBeer), userInfo: nil, repeats: true)
+            }
+        }
+    }
+    
     var didPause = false {
         didSet {
             startStopCounter()
@@ -42,29 +87,32 @@ class GameViewController: UIViewController {
     
     private func startStopCounter() {
         if !didPause {
-            counterTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementCounter), userInfo: nil, repeats: true)
+            roundTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementCounter), userInfo: nil, repeats: true)
             return
         }
-        counterTimer.invalidate()
+        roundTimer?.invalidate()
     }
     
     @objc private func decrementCounter() {
-        counter -= 1
-        scene.spawnBeer()
-        scene.beerSpeed -= 0.05
-        scene.shipSpeed -= 1
-        
-        guard counter == 0 else {
-            return
+        if counter >= 1 {
+            counter -= 1
+        } else {
+            roundTimer?.invalidate()
+            scene.state = .end
+            performSegue(withIdentifier: "showResult", sender: self)
         }
-        scene.state = .end
-        performSegue(withIdentifier: "showResult", sender: self)
+    }
+    
+    @objc private func spawnBeer() {
+        beersSpawned += 1
+        scene.spawnBeer()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showResult" {
             let resultPage = segue.destination as! ScoreViewController
-            resultPage.score = Double(totalScore)
+            resultPage.beersSpawned = beersSpawned
+            resultPage.score = totalScore
         }
     }
     
@@ -81,11 +129,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func pauseTapped(_ sender: UIButton) {
-        didPause = true
-        pauseView.delegate = self
-        scene.state = .pause
-        scene.view?.isPaused = true
-        view.addSubview(pauseView)
+        pause()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -95,23 +139,49 @@ class GameViewController: UIViewController {
             return .all
         }
     }
+    
+    fileprivate func pause() {
+        didPause = true
+        pauseView.delegate = self
+        scene.state = .pause
+        scene.view?.isPaused = true
+        view.addSubview(pauseView)
+        pauseView.frame = view.bounds
+        pauseView.alpha = 0
+        UIView.animate(withDuration: 0.3) {
+            self.pauseView.alpha = 1
+        }
+    }
+    
+    fileprivate func resume() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.pauseView.alpha = 0
+        }) { result in
+            self.pauseView.removeFromSuperview()
+            self.didPause = false
+            self.scene.state = .play
+            self.scene.view?.isPaused = false
+        }
+    }
 }
 
 extension GameViewController: PauseViewDelegate {
     func continueButtonPressed(_ pauseView: PauseView) {
-        didPause = false
-        scene.state = .play
-        scene.view?.isPaused = false
-        pauseView.removeFromSuperview()
+        resume()
     }
 }
 
 extension GameViewController: GameSceneDelegate {
     func didStartGame(_ gameScene: GameScene) {
         startStopCounter()
+        difficultyLevel = 0
     }
     
     func gameScene(_ gameScene: GameScene, scoreDidChange score: Int) {
         totalScore = score
+        if score % 7 == 0 {
+            difficultyLevel += 1
+        }
+        gameScene.ship.setRandomPhoto()
     }
 }
