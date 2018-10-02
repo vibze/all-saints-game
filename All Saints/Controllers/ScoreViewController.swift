@@ -17,8 +17,7 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     
     @IBAction func didTapDoneButton(_ sender: Any) {
-//        dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: "unwindToHomePage", sender: self)
+        AppDelegate.shared.presentHomeViewController()
     }
     
     

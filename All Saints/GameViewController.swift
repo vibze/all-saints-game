@@ -93,7 +93,7 @@ class GameViewController: UIViewController {
         } else {
             roundTimer?.invalidate()
             scene.state = .end
-            performSegue(withIdentifier: "showResult", sender: self)
+            AppDelegate.shared.presentScoreViewController(beersSpawned: beersSpawned, beersDrank: totalScore)
         }
     }
     
@@ -103,15 +103,7 @@ class GameViewController: UIViewController {
         beersSpawned += 1
         scene.spawnBeer()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showResult" {
-            let resultPage = segue.destination as! ScoreViewController
-            resultPage.beersSpawned = beersSpawned
-            resultPage.score = totalScore
-        }
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
