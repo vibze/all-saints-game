@@ -19,19 +19,9 @@ class LeaderboardPage: UIViewController {
         setupTable()
         indicator.startAnimating()
         indicator.hidesWhenStopped = true
-        ref.observe(.value) { (snapshot) in
-            var players = [Player]()
-            for child in snapshot.children {
-                if let snapshot = child as? DataSnapshot,
-                    let player = Player(snapshot: snapshot) {
-                    players.append(player)
-                    self.indicator.stopAnimating()
-                }
-            }
+        FirebaseService.getAllPlayers { players in
             self.topPlayers = players
-            self.topPlayers.sort(by: { (lPlayer, rPlayer) -> Bool in
-                lPlayer.score > rPlayer.score
-            })
+            self.indicator.stopAnimating()
             self.tableView.reloadData()
         }
     }
