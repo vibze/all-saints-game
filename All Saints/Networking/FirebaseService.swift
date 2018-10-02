@@ -12,14 +12,7 @@ import FirebaseDatabase
 let ref = Database.database().reference()
 
 class FirebaseService {
-    static func setNewScore(id: String, name: String, score: Double) {
-        ref.child("players").setValue(["id": id,
-                                       "name": name,
-                                       "score": score
-        ])
+    static func setNewScore(player: Player) {
+        ref.child(player.id).setValue(player.toAnyObject())
     }
-    
-//    static func getAllPlayers() -> Player {
-//        return Player()
-//    }
 }

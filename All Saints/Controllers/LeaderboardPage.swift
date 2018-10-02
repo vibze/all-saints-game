@@ -11,29 +11,44 @@ import FirebaseDatabase
 
 class LeaderboardPage: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var ref = Database.database().reference()
+    var topPlayers = [Player]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTable()
+        
+        ref.observe(.value) { (snapshot) in
+            var players = [Player]()
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                    let player = Player(snapshot: snapshot) {
+                    players.append(player)
+                }
+            }
+            self.topPlayers = players
+            self.tableView.reloadData()
+        }
     }
     
     private func setupTable() {
-        tableView.register(PlayerCell.self, forCellReuseIdentifier: "playerCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(PlayerCell.nib, forCellReuseIdentifier: PlayerCell.name)
     }
     
     @IBAction func tryButtonTapped(_ sender: ActionButton) {
-        debugPrint("try button tapped")
+        AppDelegate.shared.presentHomeViewController()
     }
 }
 
 extension LeaderboardPage: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return topPlayers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as! PlayerCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PlayerCell.name, for: indexPath) as! PlayerCell
+        cell.setupCell(player: topPlayers[indexPath.row])
         return cell
     }
     

@@ -11,7 +11,8 @@
 		1853D25A2162288900E80B37 /* gulp-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1853D255216227A400E80B37 /* gulp-1.mp3 */; };
 		189AD05521631AFF00B51333 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 189AD05421631AFF00B51333 /* GoogleService-Info.plist */; };
 		189AD05721631FF300B51333 /* LeaderboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AD05621631FF300B51333 /* LeaderboardPage.swift */; };
-		189AD059216322F200B51333 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189AD058216322F200B51333 /* PlayerCell.swift */; };
+		18AC9036216377870065584D /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC9035216377870065584D /* PlayerCell.swift */; };
+		18AC9038216379D30065584D /* PlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18AC9037216379D30065584D /* PlayerCell.xib */; };
 		18E7CEDB216343F500BB7CCF /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7CEDA216343F500BB7CCF /* FirebaseService.swift */; };
 		18E7CEDE21635FAB00BB7CCF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7CEDD21635FAB00BB7CCF /* Player.swift */; };
 		5CA759D6A28F0A1BBA2C4CA9 /* Pods_All_Saints.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E95D0FA47538150E6A3BFD2 /* Pods_All_Saints.framework */; };
@@ -45,7 +46,8 @@
 		1853D257216227AC00E80B37 /* soundtrack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundtrack.mp3; sourceTree = "<group>"; };
 		189AD05421631AFF00B51333 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		189AD05621631FF300B51333 /* LeaderboardPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardPage.swift; sourceTree = "<group>"; };
-		189AD058216322F200B51333 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		18AC9035216377870065584D /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		18AC9037216379D30065584D /* PlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerCell.xib; sourceTree = "<group>"; };
 		18E7CEDA216343F500BB7CCF /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		18E7CEDD21635FAB00BB7CCF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5E95D0FA47538150E6A3BFD2 /* Pods_All_Saints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Saints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,7 +203,7 @@
 				845F63A1215E2773008BF838 /* ActionButton.swift */,
 				845F63C12161F615008BF838 /* PauseView.swift */,
 				84C1DA272162159600025FE0 /* ScoreLabelView.swift */,
-				189AD058216322F200B51333 /* PlayerCell.swift */,
+				18AC9035216377870065584D /* PlayerCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +215,7 @@
 				845F63A4215E3E12008BF838 /* LaunchScreen.storyboard */,
 				845F63A6215E3E12008BF838 /* Main.storyboard */,
 				841757402161F6A5007866AE /* PauseView.xib */,
+				18AC9037216379D30065584D /* PlayerCell.xib */,
 				845F63A8215E3E12008BF838 /* GameScene.sks */,
 				845F63A9215E3E12008BF838 /* AppDelegate.swift */,
 				845F63AA215E3E12008BF838 /* Actions.sks */,
@@ -287,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18AC9038216379D30065584D /* PlayerCell.xib in Resources */,
 				1853D2592162288900E80B37 /* soundtrack.mp3 in Resources */,
 				1853D25A2162288900E80B37 /* gulp-1.mp3 in Resources */,
 				845F6393215D0105008BF838 /* spark.sks in Resources */,
@@ -354,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				845F638C215D009E008BF838 /* GameScene+NodeConfig.swift in Sources */,
+				18AC9036216377870065584D /* PlayerCell.swift in Sources */,
 				845F63B9215E50B9008BF838 /* SKSpriteNode+aspectFill.swift in Sources */,
 				189AD05721631FF300B51333 /* LeaderboardPage.swift in Sources */,
 				845F63C22161F617008BF838 /* PauseView.swift in Sources */,
@@ -367,7 +372,6 @@
 				845F638A215D008B008BF838 /* GameState.swift in Sources */,
 				845F63A2215E2773008BF838 /* ActionButton.swift in Sources */,
 				845F639A215DD033008BF838 /* Ship.swift in Sources */,
-				189AD059216322F200B51333 /* PlayerCell.swift in Sources */,
 				845F63B5215E4385008BF838 /* ScoreViewController.swift in Sources */,
 				18E7CEDE21635FAB00BB7CCF /* Player.swift in Sources */,
 				845F63AE215E3E17008BF838 /* AppDelegate.swift in Sources */,
@@ -522,7 +526,10 @@
 				DEVELOPMENT_TEAM = R87MWZ88KR;
 				INFOPLIST_FILE = "All Saints/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kz.dar.allsaints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development kz.dar.allsaints";
@@ -540,7 +547,10 @@
 				DEVELOPMENT_TEAM = R87MWZ88KR;
 				INFOPLIST_FILE = "All Saints/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kz.dar.allsaints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development kz.dar.allsaints";

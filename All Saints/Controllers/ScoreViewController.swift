@@ -12,11 +12,17 @@ import FirebaseDatabase
 class ScoreViewController: UIViewController {
     var beersSpawned: Int = 1
     var score: Int = 0
-//    let ref = Database.database().reference()
     
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
     
     @IBAction func didTapDoneButton(_ sender: Any) {
+        let percent = Double(score)/Double(beersSpawned)*100
+        if let name = nameTextField.text,
+            name != "" {
+            let player = Player(id: UUID().uuidString, name: name, score: percent)
+            FirebaseService.setNewScore(player: player)
+        }
         AppDelegate.shared.presentHomeViewController()
     }
     
@@ -25,9 +31,6 @@ class ScoreViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         let percent = Double(score)/Double(beersSpawned)*100
         scoreLabel.text = String(format: "%.2f", percent) + "%"
-        let userId = UUID().uuidString
-        let name = "viiiitya"
-        FirebaseService.setNewScore(id: userId, name: name, score: percent)
     }
     
     @objc func keyboardWillShow(notification: Notification) {

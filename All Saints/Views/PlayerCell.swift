@@ -8,7 +8,20 @@
 
 import UIKit
 
-class PlayerCell: UITableViewCell, Nameable {
+class PlayerCell: UITableViewCell, NibGettable {
+    typealias View = PlayerCell
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        selectionStyle = .none
+        self.backgroundColor = .clear
+    }
+    
+    func setupCell(player: Player) {
+        nameLabel.text = player.name
+        scoreLabel.text = String(format: "%.2f", player.score) + "%"
+    }
 }

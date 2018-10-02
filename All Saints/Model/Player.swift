@@ -7,27 +7,41 @@
 //
 
 import Foundation
-import SwiftyJSON
+import FirebaseDatabase
 
-protocol Parsable {
-    init?(from json: JSON)
-}
-
-struct Player: Parsable {
+struct Player {
+    let ref: DatabaseReference?
     let id: String
     let name: String
     let score: Double
     
-    init?(from json: JSON) {
-        guard
-            let id = json["id"].string,
-            let name = json["name"].string,
-            let score = json["score"].double
-        else { return nil }
-        
+    init(id: String, name: String, score: Double) {
+        self.ref = nil
         self.id = id
         self.name = name
         self.score = score
+    }
+    
+    init?(snapshot: DataSnapshot) {
+        guard
+            let value = snapshot.value as? [String: AnyObject],
+            let name = value["name"] as? String,
+            let id = value["id"] as? String,
+            let score = value["score"] as? Double
+        else { return nil }
+        
+        self.ref = snapshot.ref
+        self.id = id
+        self.name = name
+        self.score = score
+    }
+    
+    func toAnyObject() -> Any {
+        return [
+            "id": id,
+            "name": name,
+            "score": score
+        ]
     }
 }
 

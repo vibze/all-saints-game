@@ -25,3 +25,13 @@ extension XibLoadable where Self: UIView {
         return Bundle.main.loadNibNamed(name, owner: nil, options: nil)?.first as! View
     }
 }
+
+protocol NibGettable: Nameable {}
+
+extension NibGettable where Self: UIView {
+    
+    static var nib: UINib {
+        return UINib(nibName: name, bundle: nil)
+    }
+    
+}

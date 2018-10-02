@@ -295,42 +295,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="weY-5u-q7z">
                                 <rect key="frame" x="24" y="44" width="327" height="543"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="playerCell" id="gX8-33-ekD">
-                                        <rect key="frame" x="0.0" y="28" width="327" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gX8-33-ekD" id="IGm-RI-rtJ" customClass="PlayerCell" customModule="All_Saints" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="player name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgK-Qo-npB">
-                                                    <rect key="frame" x="16" y="8" width="143.5" height="28"/>
-                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ir8-Kw-X24">
-                                                    <rect key="frame" x="247.5" y="8" width="63.5" height="28"/>
-                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="FgK-Qo-npB" firstAttribute="leading" secondItem="IGm-RI-rtJ" secondAttribute="leading" constant="16" id="1FH-bH-leg"/>
-                                                <constraint firstItem="FgK-Qo-npB" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="ir8-Kw-X24" secondAttribute="leading" id="VZY-dq-Bxc"/>
-                                                <constraint firstItem="ir8-Kw-X24" firstAttribute="centerY" secondItem="IGm-RI-rtJ" secondAttribute="centerY" id="gpy-LU-kHj"/>
-                                                <constraint firstItem="FgK-Qo-npB" firstAttribute="centerY" secondItem="IGm-RI-rtJ" secondAttribute="centerY" id="m16-lR-18H"/>
-                                                <constraint firstAttribute="trailing" secondItem="ir8-Kw-X24" secondAttribute="trailing" constant="16" id="oij-HV-eyl"/>
-                                            </constraints>
-                                            <connections>
-                                                <outlet property="nameLabel" destination="FgK-Qo-npB" id="SQv-Dl-Gio"/>
-                                                <outlet property="scoreLabel" destination="ir8-Kw-X24" id="Tbj-NA-7u6"/>
-                                            </connections>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cg7-UM-k1Q" customClass="ActionButton" customModule="All_Saints" customModuleProvider="target">
                                 <rect key="frame" x="52" y="595" width="271" height="48"/>
@@ -338,7 +302,7 @@
                                     <constraint firstAttribute="height" constant="48" id="pax-JV-8nR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
-                                <state key="normal" title="Попробовать еще"/>
+                                <state key="normal" title="Назад..."/>
                                 <connections>
                                     <action selector="tryButtonTapped:" destination="oX2-nc-ouX" eventType="touchUpInside" id="Mdu-t3-BBy"/>
                                 </connections>
