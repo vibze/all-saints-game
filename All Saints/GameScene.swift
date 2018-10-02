@@ -43,7 +43,6 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     var backgroundMusic = SKAudioNode()
     var drinkMusic = SKAudioNode()
 
-    
     // MARK: - Did move to skVIew
     override func didMove(to view: SKView) {
         ship.position = CGPoint(x: view.frame.width/2, y: view.frame.width - ship.size.height - 40)
@@ -56,11 +55,13 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         if let url = Bundle.main.url(forResource: "gulp-1", withExtension: "mp3") {
             drinkMusic = SKAudioNode(url: url)
             drinkMusic.autoplayLooped = false
+            drinkMusic.run(SKAction.stop())
             addChild(drinkMusic)
         }
        
         if let url = Bundle.main.url(forResource: "soundtrack", withExtension: "mp3") {
             backgroundMusic = SKAudioNode(url: url)
+            backgroundMusic.run(SKAction.stop())
             addChild(backgroundMusic)
         }
         
@@ -75,7 +76,10 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         }
         score += 1
         contact.bodyB.node?.removeFromParent()
-        drinkMusic.run(SKAction.play())
+        
+        if Model.sharedInstance.sound {
+            drinkMusic.run(SKAction.play())
+        }
     }
     
     var shipInitialX: CGFloat = 0
@@ -115,17 +119,14 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         switch state {
         case .tutorial:
             addTutorial()
-            drinkMusic.run(SKAction.stop())
         case .play:
-            if Model.sharedInstance.sound == true {
+            if Model.sharedInstance.sound {
                 backgroundMusic.run(SKAction.play())
-                drinkMusic.run(SKAction.stop())
             }
             ship.ignite()
             removeTutorial()
         case .pause:
             backgroundMusic.run(SKAction.pause())
-            drinkMusic.run(SKAction.pause())
         case .end:
             scene?.isPaused = true
             backgroundMusic.run(SKAction.stop())
