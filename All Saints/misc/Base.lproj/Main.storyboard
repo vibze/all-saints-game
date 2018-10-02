@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6u-M3-pXy" userLabel="StartButton" customClass="ActionButton" customModule="All_Saints" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="539" width="200" height="48"/>
+                                <rect key="frame" x="87.5" y="459" width="200" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="MGr-b4-CvO"/>
                                     <constraint firstAttribute="height" constant="48" id="cy0-Gm-DZr"/>
@@ -34,14 +34,14 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuLogo" translatesAutoresizingMaskIntoConstraints="NO" id="VAC-3Z-Tga">
-                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="83.5" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="4Mn-zb-KgE"/>
                                     <constraint firstAttribute="width" constant="200" id="4ys-f1-qDt"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пятница..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wak-L8-AVg">
-                                <rect key="frame" x="134" y="453.5" width="107" height="23.5"/>
+                                <rect key="frame" x="134" y="303.5" width="107" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -58,6 +58,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQe-IA-0sm" userLabel="LeadersButton">
+                                <rect key="frame" x="80" y="527" width="200" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="MYw-Kb-5JV"/>
+                                    <constraint firstAttribute="width" constant="200" id="Ppj-bg-75L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                <state key="normal" title="Топ друзей">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapLeadersButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Qoy-Wq-mLp"/>
+                                    <action selector="didTapStartButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="k3o-op-kn6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -66,11 +81,13 @@
                             <constraint firstItem="QxT-XJ-d5d" firstAttribute="centerY" secondItem="k7U-IR-Soa" secondAttribute="centerY" id="8JW-KP-gBa"/>
                             <constraint firstItem="oKR-WI-OlE" firstAttribute="bottom" secondItem="3se-qz-xqx" secondAttribute="bottom" id="EAh-lH-ora"/>
                             <constraint firstItem="VAC-3Z-Tga" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" constant="-150" id="LcU-FL-8Rm"/>
+                            <constraint firstItem="YQe-IA-0sm" firstAttribute="top" secondItem="E6u-M3-pXy" secondAttribute="bottom" constant="20" id="MRS-Bv-6GK"/>
                             <constraint firstItem="oKR-WI-OlE" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" id="Ub3-el-SUJ"/>
                             <constraint firstItem="QxT-XJ-d5d" firstAttribute="leading" secondItem="k7U-IR-Soa" secondAttribute="trailing" constant="10" id="UrZ-0a-VxG"/>
                             <constraint firstItem="oKR-WI-OlE" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="XwE-Dl-Eid"/>
                             <constraint firstItem="VAC-3Z-Tga" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="Y8Q-Ho-8tv"/>
-                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="E6u-M3-pXy" secondAttribute="bottom" constant="80" id="Z7u-t9-dOm"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="E6u-M3-pXy" secondAttribute="bottom" constant="160" id="Z7u-t9-dOm"/>
+                            <constraint firstItem="YQe-IA-0sm" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="nMn-VR-Ucr"/>
                             <constraint firstItem="oKR-WI-OlE" firstAttribute="trailing" secondItem="4qk-I5-YsI" secondAttribute="trailing" id="roe-lU-Iwg"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="k7U-IR-Soa" secondAttribute="bottom" constant="20" id="u4L-W4-Tbl"/>
                             <constraint firstItem="wak-L8-AVg" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="uF9-eH-Lmd"/>

@@ -41,6 +41,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switchRoot(viewController: vc)
     }
     
+    func presentLeaderBoardViewControler() {
+        
+    }
+    
     private func switchRoot(viewController: UIViewController) {
         guard let window = window, window.rootViewController != viewController else { return }
         
