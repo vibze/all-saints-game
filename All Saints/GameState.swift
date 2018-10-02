@@ -9,7 +9,7 @@
 import Foundation
 
 enum GameState {
-    case tutorial, play, pause, end
+    case tutorial, play, pause, end, gameOver
 }
 
 class Model {

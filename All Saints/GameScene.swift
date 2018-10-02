@@ -25,7 +25,6 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     weak var sceneDelegate: GameSceneDelegate?
     
-    var move = SKAction()
     let ship = Ship.construct()
     var beerSpeed = 3.5
     var shipSpeed = 5.0 {
@@ -37,6 +36,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     var background: SKSpriteNode!
     var boomEmitter:SKEmitterNode!
     var swipeSprite: SKSpriteNode!
+    var move = SKAction()
 
     // Touch handling
     var i: Float = 5
@@ -129,10 +129,12 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         case .pause:
             backgroundMusic.run(SKAction.pause())
         case .end:
-            scene?.isPaused = true
+            shipFly()
             backgroundMusic.run(SKAction.stop())
             drinkMusic.run(SKAction.stop())
             break
+        case .gameOver:
+            scene?.isPaused = true
         }
     }
     
@@ -154,5 +156,11 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
             SKAction.removeFromParent()
         ]
         beer.run(SKAction.sequence(actions))
+    }
+    
+    func shipFly() {
+        let action = SKAction.moveTo(y: 900, duration: 15)
+        ship.run(action)
+        ship.fastFly()
     }
 }
