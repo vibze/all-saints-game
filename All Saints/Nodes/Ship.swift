@@ -56,16 +56,19 @@ class Ship: SKSpriteNode {
             self.bubbleEmitter.isHidden = true
         }
     }
-
+    
     func setRandomPhoto() {
         let i = Int.random(in: 1 ... 7)
         photoNode.texture = SKTexture(imageNamed: "lex-\(i)")
         photoNode.zPosition = 1
-        
-        let largeScale = SKAction.scale(to: 1.3, duration: 4)
-        let smallScale = SKAction.scale(to: 1.0, duration: 4)
-        let repeatForever = SKAction.repeatForever(SKAction.sequence([largeScale, smallScale]))
+    }
+    
+    func photoTransform() {
+        let largeScale = SKAction.scale(to: 1.3, duration: 3)
+        let smallScale = SKAction.scale(to: 1.0, duration: 3)
 
-        photoNode.run(repeatForever)
+        let largeRepeat = SKAction.repeat(largeScale, count: 1)
+        let smallRepeat = SKAction.repeat(smallScale, count: 1)
+        photoNode.run(SKAction.sequence([largeRepeat,smallRepeat]))
     }
 }
