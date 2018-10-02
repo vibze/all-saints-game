@@ -71,4 +71,8 @@ class Ship: SKSpriteNode {
         let smallRepeat = SKAction.repeat(smallScale, count: 1)
         photoNode.run(SKAction.sequence([largeRepeat,smallRepeat]))
     }
+    
+    func fastFly() {
+        burnerEmitter.particleBirthRate = 800
+    }
 }

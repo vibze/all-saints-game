@@ -23,7 +23,7 @@ class GameViewController: UIViewController {
             scoreLabel.score = totalScore
         }
     }
-
+    
     let scene = GameScene(size: UIScreen.main.bounds.size)
     let pauseView = PauseView.fromXib
     
@@ -93,7 +93,12 @@ class GameViewController: UIViewController {
         } else {
             roundTimer?.invalidate()
             scene.state = .end
-            AppDelegate.shared.presentScoreViewController(beersSpawned: beersSpawned, beersDrank: totalScore)
+            isPaused = true
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.2) {
+                self.scene.state = .gameOver
+                AppDelegate.shared.presentScoreViewController(beersSpawned: self.beersSpawned, beersDrank: self.totalScore)
+            }
         }
     }
     
@@ -103,7 +108,7 @@ class GameViewController: UIViewController {
         beersSpawned += 1
         scene.spawnBeer()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -130,6 +135,7 @@ class GameViewController: UIViewController {
     
     fileprivate func pause() {
         isPaused = true
+        
         pauseView.delegate = self
         scene.state = .pause
         scene.view?.isPaused = true
