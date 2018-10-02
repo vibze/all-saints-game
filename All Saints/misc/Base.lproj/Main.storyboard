@@ -13,7 +13,7 @@
         <!--Home View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="HomeViewController" customModule="All_Saints" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="BV1-FR-VrT" customClass="HomeViewController" customModule="All_Saints" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,7 +30,7 @@
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <state key="normal" title="Начать"/>
                                 <connections>
-                                    <segue destination="Rz5-zw-OuE" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Gdv-hd-aD2"/>
+                                    <action selector="didTapStartButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="tKL-zg-XF5"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuLogo" translatesAutoresizingMaskIntoConstraints="NO" id="VAC-3Z-Tga">
@@ -89,7 +89,7 @@
         <!--Game View Controller-->
         <scene sceneID="YBB-gP-TrU">
             <objects>
-                <viewController id="Rz5-zw-OuE" customClass="GameViewController" customModule="All_Saints" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Game" id="Rz5-zw-OuE" customClass="GameViewController" customModule="All_Saints" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tUx-ff-hRD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,7 +146,6 @@
                         <outlet property="scoreLabel" destination="QSJ-xZ-IxK" id="CBW-Ht-BH5"/>
                         <outlet property="skView" destination="OyS-gQ-vbn" id="TpG-Yd-dLe"/>
                         <outlet property="timerLabel" destination="noU-hq-7TH" id="4c4-sa-KDE"/>
-                        <segue destination="I76-s9-dTR" kind="presentation" identifier="showResult" modalTransitionStyle="crossDissolve" id="SVH-H1-0VH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nv4-ti-HYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -156,7 +155,7 @@
         <!--Score View Controller-->
         <scene sceneID="2m4-GP-f2k">
             <objects>
-                <viewController id="I76-s9-dTR" customClass="ScoreViewController" customModule="All_Saints" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Score" id="I76-s9-dTR" customClass="ScoreViewController" customModule="All_Saints" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NxJ-Lq-Q1m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
