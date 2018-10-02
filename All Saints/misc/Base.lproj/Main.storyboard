@@ -164,9 +164,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuBackground" translatesAutoresizingMaskIntoConstraints="NO" id="WKK-Qh-SKx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmo-oA-J4f" userLabel="ScoreLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmo-oA-J4f" userLabel="ScoreLabel">
                                 <rect key="frame" x="129.5" y="287" width="116" height="93"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="80"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="60"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -213,10 +213,12 @@
                         <constraints>
                             <constraint firstItem="HzJ-r8-AHP" firstAttribute="trailing" secondItem="Tkm-Yl-Aoz" secondAttribute="trailing" constant="30" id="2XH-Sz-ry4"/>
                             <constraint firstItem="Wmo-oA-J4f" firstAttribute="centerY" secondItem="NxJ-Lq-Q1m" secondAttribute="centerY" id="3U9-rw-YRy"/>
+                            <constraint firstItem="HzJ-r8-AHP" firstAttribute="trailing" secondItem="Wmo-oA-J4f" secondAttribute="trailing" constant="24" id="BfJ-G3-iqi"/>
                             <constraint firstItem="WKK-Qh-SKx" firstAttribute="top" secondItem="NxJ-Lq-Q1m" secondAttribute="top" id="DtO-rF-0Jh"/>
                             <constraint firstAttribute="bottom" secondItem="WKK-Qh-SKx" secondAttribute="bottom" id="KFc-UZ-QUS"/>
                             <constraint firstItem="Wmo-oA-J4f" firstAttribute="top" secondItem="Tkm-Yl-Aoz" secondAttribute="bottom" constant="20" id="MpN-Y1-VdD"/>
                             <constraint firstItem="nr6-W4-PRm" firstAttribute="centerX" secondItem="WKK-Qh-SKx" secondAttribute="centerX" id="TlF-lZ-xHf"/>
+                            <constraint firstItem="Wmo-oA-J4f" firstAttribute="leading" secondItem="HzJ-r8-AHP" secondAttribute="leading" constant="24" id="U9D-FF-wII"/>
                             <constraint firstItem="Tkm-Yl-Aoz" firstAttribute="leading" secondItem="HzJ-r8-AHP" secondAttribute="leading" constant="30" id="WPp-sA-5qL"/>
                             <constraint firstItem="nr6-W4-PRm" firstAttribute="bottom" secondItem="dzO-cU-qMD" secondAttribute="top" constant="-16" id="Wb1-Di-JdX"/>
                             <constraint firstItem="HzJ-r8-AHP" firstAttribute="bottom" secondItem="dzO-cU-qMD" secondAttribute="bottom" constant="80" id="cuK-8D-7dm"/>

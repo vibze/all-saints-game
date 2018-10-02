@@ -24,10 +24,11 @@ class ScoreViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        scoreLabel.text = "\(Int(Double(score)/Double(beersSpawned)*100))%"
-//        let userId = UUID().uuidString
-//        let name = "ilyar"
-//        ref.child("players").child(userId).setValue(["name": name,
-//                                                     "score": score])
+        let percent = Double(score)/Double(beersSpawned)*100
+        scoreLabel.text = String(format: "%.2f", percent) + "%"
+        let userId = UUID().uuidString
+        let name = "viiiitya"
+        ref.child("players").child(userId).setValue(["name": name,
+                                                     "score": score])
     }
 }
