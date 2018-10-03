@@ -18,6 +18,8 @@ class PlayerCell: UITableViewCell, NibGettable {
         super.awakeFromNib()
         selectionStyle = .none
         self.backgroundColor = .clear
+        nameLabel.adjustsFontSizeToFitWidth = true
+        nameLabel.minimumScaleFactor = 0.5
     }
     
     func setupCell(player: Player) {

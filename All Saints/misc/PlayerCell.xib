@@ -17,13 +17,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qyn-dw-9aM">
-                    <rect key="frame" x="24" y="26" width="64" height="28"/>
+                    <rect key="frame" x="16" y="26" width="64" height="28"/>
                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.23%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kv8-dZ-G4I">
-                    <rect key="frame" x="405" y="26" width="105" height="28"/>
+                    <rect key="frame" x="413" y="26" width="105" height="28"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="105" id="eu8-4U-60A"/>
                     </constraints>
@@ -34,10 +34,10 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Qyn-dw-9aM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="3nf-a5-ri2"/>
+                <constraint firstItem="Qyn-dw-9aM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="3nf-a5-ri2"/>
                 <constraint firstItem="Kv8-dZ-G4I" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="56V-hG-WWr"/>
                 <constraint firstItem="Qyn-dw-9aM" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="B0s-uF-GqM"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Kv8-dZ-G4I" secondAttribute="trailing" constant="24" id="dIv-9o-2H4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Kv8-dZ-G4I" secondAttribute="trailing" constant="16" id="dIv-9o-2H4"/>
                 <constraint firstItem="Qyn-dw-9aM" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Kv8-dZ-G4I" secondAttribute="leading" constant="16" id="yVX-oH-ZbX"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
